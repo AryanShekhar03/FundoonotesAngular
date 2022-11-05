@@ -1,0 +1,133 @@
+.supercontainer{
+    width: 50vw;
+    height: 75vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: absolute;
+    top:10%;
+    left:25%;
+    display: flex;
+    flex-direction: row;
+}
+.signupcontainer{
+    width: 65%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.google{
+     height: 5%;
+     width: 30%;
+      /* border: 1px solid black;  */
+     display: flex;
+    //  justify-content: center;
+    padding-right: 245PX;
+    font-family: sans-serif;
+}
+.Title1{
+    color: blue;
+    font-size: 25px;
+    font-weight: 100%;
+}
+.Title2{
+    color: olivedrab;
+    font-size: 25px;
+}
+.Title3{
+    color: orange;
+    font-size: 25px;
+}
+.Title4{
+    color: tomato;
+    font-size: 25px;
+}
+.Title5{
+    color: magenta;
+    font-size: 25px;
+}
+.Title6{
+    color: yellow;
+    font-size: 25px;
+}
+ .fandlbox{
+     /* border: 1px solid rgb(70, 247, 138);  */
+    width: 85%;
+   display: flex;
+   height: 12%;
+   justify-content: space-between;
+ }
+//  .name{
+//     width: 48%;
+// }
+.emailbox{
+    width: 85%;
+    padding-top: 35PX;
+    
+}
+// .emailtext{
+//     color: blue;
+// }
+.emailblue{
+    color: blue;
+    // margin-left: -38%;
+    display: flex;
+    // padding-left: 50px
+    margin-top: 10px;
+  
+  }
+  .emailtxt{
+    font-size: small;
+    margin-top: -10px;
+    padding-left: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+.text{
+    font-size: small;
+    
+    margin-top: -60px;
+    margin-left: -25px;
+}
+.createaccount{
+    font-size: 20px;
+    font-weight: bolder;
+    height: 5%;
+    width: 80%;
+    /* border: 1px solid black; */
+}
+.lastcontainer{
+
+    width: 85%;
+    height: 7%;
+    /* border: 1px solid seagreen; */
+    color: blue;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.containerImg{
+    width: 30%;
+    padding-right: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.button{
+    background-color: blue
+
+}
+.mat-form-field {
+    display: inline;
+    position: relative;
+    text-align: left;
+}
+.fandbox{
+    display: flex;
+    margin-top: 50px;
+}

@@ -1,0 +1,40 @@
+<div class='container'>
+    
+    <div class='googleContainer'>
+   
+        <span class="Title1">F</span>
+        <span class="Title2">u</span>
+        <span class="Title3">n</span>
+        <span class="Title4">d</span>
+        <span class="Title5">o</span>
+        <span class="Title6">o</span></div>
+
+        <div class='SigninContainer'><span>Sign in</span></div>
+        <div class='signinText'><span>Use Your Google Account</span></div>
+        <div class='TextBoxes'>
+            <form style="text-align:center" #loginForm="ngForm">
+
+            <div class="signinbox">
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Email" type="email" name="email"  [formControl]="emailControl" [errorStateMatcher]="match" [(ngModel)]="model.email" required>
+            
+                </mat-form-field>
+            </div>
+            <div class="signinbox">
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Password" type="password" name="password"  [formControl]="emailControl"  [errorStateMatcher]="match" [(ngModel)]="model.password" required>
+            
+                </mat-form-field>
+            </div>
+            </form>
+            
+        </div>
+        <div class='forgetmailText'><p routerLink="/forgetpassword" >Forget Password?</p></div>
+        <div id="text"><span>Not Your Computer? Use Guest mode to sign in privately.</span></div>
+        <div class='learnMoreText'><span>Learn more</span></div>
+        <div class='createAccount'>
+            <div class='createAccountText'><p routerLink="/register" >Create Account</p></div>
+            <!-- <div class='createAccountButton'><Button style="background-color:blue ;" variant="contained" size='small' onClick={onsubmit} size="large">Next</Button></div> -->
+            <button style="background-color:blue ;  "type="submit">login</button>
+        </div>
+</div>

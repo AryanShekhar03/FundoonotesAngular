@@ -1,0 +1,83 @@
+<div class='supercontainer'>
+    <div class='signupcontainer'>
+        <div class='google'>
+            <span class='Title1'>F</span>
+            <span class='Title2'>u</span>
+            <span class='Title3'>n</span>
+            <span class='Title4'>d</span>
+            <span class='Title5'>o</span>
+            <span class='Title6'>o</span>
+        </div>
+
+        <div class='createaccount'><span>Create your Fundoo Account</span></div>
+    <form style="text-align:center"  #registrationFrom="ngForm" >
+        
+        <div class='fandlbox'>
+    
+            <mat-form-field  floatLabel="auto" appearance="outline">
+                <!-- <mat-label>First name</mat-label> -->
+                <input matInput placeholder="First name" name="First name" type="text" [formControl]="Firstname" [(ngModel)]="model.Firstname">
+                <mat-error *ngIf="Firstname.hasError('required')">firstName is required</mat-error>
+            </mat-form-field>
+                
+            
+            <mat-form-field appearance="outline">
+                <!-- <mat-label>Last name</mat-label> -->
+                <input matInput placeholder="Last name" name="Last name" type="text" [formControl]="Lastname" [(ngModel)]="model.Lastname">
+                <mat-error *ngIf="Lastname.hasError('required')">LastName is required</mat-error>
+                
+            </mat-form-field>
+        </div>
+        <div class='emailbox'>
+            <mat-form-field appearance="outline">
+                <!-- <mat-label>Username </mat-label> -->
+                <input matInput placeholder="Username" name="Username" type="email" [formControl]="Username" [(ngModel)]="model.Username">
+                            <mat-error *ngIf="Username.hasError('required')">Email Address is required</mat-error>
+                            <mat-error *ngIf="Username.hasError('pattern') && !Username.hasError('required') ">Enter Valid Email address</mat-error>
+      
+            </mat-form-field>
+       
+            <div class='emailtxt'><span>you can use letters,numbers & periods</span></div></div>
+            <div class='emailblue'><span>Use my current email address instead</span></div>
+        
+
+            <div class='fandbox'>
+                <mat-form-field appearance="outline">
+                    <!-- <mat-label>Password </mat-label> -->
+                    <input matInput placeholder="password" name="password" type="password" [formControl]="passwordControl" [(ngModel)]="model.password">
+                    <mat-error *ngIf="passwordControl.hasError('required')">Password is required</mat-error>
+                    <mat-error *ngIf="passwordControl.hasError('pattern') && !passwordControl.hasError('required') ">Enter a valid Password</mat-error>
+                </mat-form-field>   
+             
+            
+                
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirm </mat-label>
+                    <!-- <mat-form-field appearance="outline"> -->
+                        <!-- <mat-label>Email</mat-label> -->
+                        <input matInput placeholder="Confirm">
+            
+                    
+                </mat-form-field>
+            </div>
+    </form>
+                <div class='text'><span>Use 8 or more characters with a mix of letters, numbers &
+                symbols</span></div>
+
+                <div class="lastcontainer">
+                    <p routerLink="/login" >Sign in instead</p>
+                    <!-- <button style="background-color:blue ;"variant="contained" size='small' onClick={onsubmit} size="large">Next</button> 
+                     --><button style="background-color:blue ;  "type="submit">Register</button>
+                </div> 
+
+
+    </div>
+    <div class='containerImg'>
+        <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt='' />
+
+         <div class='imgtxt'>One account. All of Google working for you</div>
+            
+             
+    </div>
+
+</div>
