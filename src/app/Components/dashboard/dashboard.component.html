@@ -1,0 +1,80 @@
+<div class="menu">
+    <mat-toolbar color="primary" fxLayout="row">
+        <div class="title-bar" >                   
+            <mat-icon >menu</mat-icon>
+            <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" alt="fundoo icon" >
+            <div className="textKeep"><p>Fundoo</p></div>
+        </div>
+        <div class="Searchbar"fxFlex="60%" fxHide.sm="true" fxHide.xs="true">
+            <mat-form-field appearance="outline">
+                <mat-label class="search-area">Search</mat-label>
+                <input matInput type="search" 
+                    placeholder="Search" 
+                    >
+                <mat-icon matPrefix>search</mat-icon>
+            </mat-form-field>
+        </div>
+        <div class="threeIcons">
+            <div class="refresh"> <img src="assets/refresh.png" alt="" width="29px"/>  </div>
+            <div class="list"> <img src="assets/listview.png" alt="" width="29px" />  </div>
+            <div class="setting"> <img src="assets/setting.png" alt="" width="29px" />  </div>
+
+        </div>
+
+        <div class='iconsheader'>
+            <div class="apps"> <img src="assets/apps.png" alt="" width="29px" />  </div>
+            <div class="circle"> <img src="assets/account_circle.png" alt="" width="29px" />  </div>
+
+        </div>
+        
+    </mat-toolbar>
+</div>
+<mat-sidenav-container style="height: 100vh;">
+    <mat-sidenav #sidenav  >
+        
+        <mat-nav-list class="sidenav-list">
+            <div>
+                <div>
+                    <a mat-list-item routerLink="home" routerLinkActive="active">
+                        <img src="assets/lightbulb.png" alt="" width="29px">
+                        <span style="margin-left: 30px;">Notes</span>
+                    </a>
+                </div>
+                <div>
+                    <a mat-list-item routerLink="reminder" routerLinkActive="active">
+                        <img src="assets/notifications.png" alt="" width="29px">
+                        <span style="margin-left: 30px;">Reminders</span>
+                    </a>
+                </div>
+            </div>   
+            <div>
+                <a mat-list-item routerLink="Edit" routerLinkActive="active">
+                    <img src="assets/edit.png" alt=""width="29px">
+                    <span style="margin-left: 30px;">Edit labels</span>
+                </a>
+                
+                     
+                
+            </div>
+            <div>
+                <div>
+                    <a mat-list-item routerLink="archive" routerLinkActive="active">
+                        <img src="assets/archive.png" alt=""width="29px">
+                        <span style="margin-left: 30px;">Archive</span>
+                    </a>
+                </div>
+                <div>
+                    <a mat-list-item routerLink="trash" routerLinkActive="active" fxLayoutGap="20px">
+                        <img src="assets/delete.png" alt=""width="29px">
+                        <span style="margin-left: 30px;">Trash</span> 
+                    </a>
+                </div>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="mat-sidenav-content">
+        <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+        
+</mat-sidenav-container>

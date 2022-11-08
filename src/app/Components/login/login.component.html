@@ -16,13 +16,17 @@
 
             <div class="signinbox">
                 <mat-form-field appearance="outline">
-                    <input matInput placeholder="Email" type="email" name="email"  [formControl]="emailControl" [errorStateMatcher]="match" [(ngModel)]="model.email" required>
+                    <input matInput placeholder="Email" type="email" name="email"  [formControl]="email" [errorStateMatcher]="match" [(ngModel)]="model.email" required>
+                    <mat-error *ngIf="email.hasError('required')">Email Address is required</mat-error>
+                    <mat-error *ngIf="email.hasError('pattern') && !email.hasError('required') ">Enter Valid Email address</mat-error>
             
                 </mat-form-field>
             </div>
             <div class="signinbox">
                 <mat-form-field appearance="outline">
-                    <input matInput placeholder="Password" type="password" name="password"  [formControl]="emailControl"  [errorStateMatcher]="match" [(ngModel)]="model.password" required>
+                    <input matInput placeholder="Password" type="password" name="password"  [formControl]="passwordControl"  [errorStateMatcher]="match" [(ngModel)]="model.password" required>
+                    <mat-error *ngIf="passwordControl.hasError('required')">Password is required</mat-error>
+                    <mat-error *ngIf="passwordControl.hasError('pattern') && !passwordControl.hasError('required') ">Enter a valid Password</mat-error>
             
                 </mat-form-field>
             </div>

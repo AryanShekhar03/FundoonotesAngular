@@ -12,6 +12,19 @@ import {MatInputModule} from '@angular/material/input';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ForgetpasswordComponent } from './Components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu'
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { NotesComponent } from './Components/notes/notes.component';
+import { ArchiveComponent } from './Components/archive/archive.component';
+import { TrashComponent } from './Components/trash/trash.component';
+import { CreatenoteComponent } from './Components/createnote/createnote.component';
+import { DisplaynoteComponent } from './Components/displaynote/displaynote.component';
+import { IconComponent } from './Components/icon/icon.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -21,6 +34,14 @@ import { ResetpasswordComponent } from './Components/resetpassword/resetpassword
     LoginComponent,
     ForgetpasswordComponent,
     ResetpasswordComponent,
+    DashboardComponent,
+    NotesComponent,
+    ArchiveComponent,
+    TrashComponent,
+    CreatenoteComponent,
+    DisplaynoteComponent,
+    IconComponent,
+    
   
   ],
   imports: [
@@ -33,6 +54,13 @@ import { ResetpasswordComponent } from './Components/resetpassword/resetpassword
     FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

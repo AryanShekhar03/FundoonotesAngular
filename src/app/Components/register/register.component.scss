@@ -63,7 +63,7 @@
 //     width: 48%;
 // }
 .emailbox{
-    width: 85%;
+    width: 100%;
     padding-top: 35PX;
     
 }
@@ -130,4 +130,10 @@
 .fandbox{
     display: flex;
     margin-top: 50px;
+}
+.form{
+    margin-left: -293px;
+}
+.mat-form-field-appearance-outline  {
+    width: 200px;
 }
