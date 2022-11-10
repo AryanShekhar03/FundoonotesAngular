@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/userservice/user.service';
 
 @Component({
   selector: 'app-resetpassword',
@@ -7,18 +8,44 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./resetpassword.component.scss']
 })
 export class ResetpasswordComponent implements OnInit {
-  model: any = {};
-  password = new FormControl('', [
-    Validators.required,
-    Validators.pattern('[A-Za-z0-9]{8}'),
-    
-  ]);
+  resetpassword!: FormGroup;
+  submitted = false;
+  
 
 
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder,private user:UserService) { }
 
   ngOnInit(): void {
+    this.resetpassword = this.formBuilder.group({
+      password: ['', [Validators.required, Validators.minLength(4)]],
+      cpassword: ['', [Validators.required, Validators.minLength(4)]]
+    }
+      );
   }
+
+  get f(){return this.resetpassword.controls;}
+  onSubmit() {
+    this.submitted = true;
+  
+    // stop here if form is invalid
+    if (this.resetpassword.valid) {
+      console.log("valid data"+this.resetpassword.value);
+     
+      let data={
+        
+       password:this.resetpassword.value.password
+      
+      }
+      this.user.resetpassword(data).subscribe((response:any)=>{
+       
+       console.log(response);
+      }
+      )
+   }else{
+     console.log("Invalid", this.resetpassword.value);
+     
+   }
+    }
 
 }

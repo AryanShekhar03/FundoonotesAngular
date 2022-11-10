@@ -1,131 +1,79 @@
-.container{
-    width: 30vw;
-    height: 70vh;
-    border: 1px solid grey;
-    border-radius: 10px;
-    position: absolute;
-    top:15%;
-    left: 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    
-   
+.head-style{
+    font-weight: bold;
 }
-.googleContainer{
-    height: 5%;
-    width: 30%;
-    /* border: 1px solid black;  */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+.Fundoo-f{
+    color:blue;
 }
-
-.Title1{
-    color: blue;
-    font-size: 25px;
-    font-weight: 100%;
+.Fundoo-u{
+    color: red;
 }
-.Title2{
-    color: olivedrab;
-    font-size: 25px;
-}
-.Title3{
-    color: orange;
-    font-size: 25px;
-}
-.Title4{
-    color: tomato;
-    font-size: 25px;
-}
-.Title5{
-    color: magenta;
-    font-size: 25px;
-}
-.Title6{
+.Fundoo-n{
     color: yellow;
-    font-size: 25px;
 }
-.SigninContainer{
-    height: 5%;
-    width: 30%;
-    font-weight: bold;
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center
-    /* border: 1px solid black;    */
+.Fundoo-d{
+    color: blue;
 }
-.signinText{
-    height: 5%;
-    width: 60%;
-    font-size: large;
-    display: flex;
-    align-items: center;
-    justify-content: center
-    
-    /* border: 1px solid black;   */
+.Fundoo-o{
+    color: green;
+}
+.Fundoo-oo{
+    color: red;
+}
 
-}
-.TextBoxes{
-width: 85%;
-height: 30%;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-
-}
-.forgetmailText{
+.mat-cards{
+    width: 30%; 
    
-    height: 5%;
-    width: 35%;
-    /* border: 1px solid black;  */
-    font-weight: bold;
-    font-size: medium;
-    color: blue;
-    padding-right: 140px;
-    padding-top: -17px;
-    margin-top: -20px;
+    margin-top: 5%;
+    margin-left: 30%;
+ border: 2px black;
+ font-family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+}
+.form{
+    text-align: center;
+    
+}
 
+.Form-width{
+    width: 60%;
 }
-#text{
-    padding-left: 2%;
-    padding-right: 2%;
-    height: 10%;
-    width: 80%;
-    font-size: small;
-    /* border: 1px solid black;  */
-    margin-left: 50px;
-    padding-top: 15px;
+.LabelWidth{
+    width: 350px;
 }
-.learnMoreText{
-    padding-left: 2%;
-    padding-right: 2%;
-    height: 5%;
-    width: 30%;
-    /* border: 1px solid black;  */
-    font-weight: bold;
-    font-size: medium;
-    color: blue;
-    margin-right: 180px;
-    margin-top: -50px;
+.ForgetPass{
+    font-weight: 20px bold;
+    color: var(--gm-colortextbutton-ink-color, #1a73e8);
+    margin-left: 52px;
+    margin-top: -5px;
 }
-.createAccount{
-    height: 8%;
-    width: 80%;
-    /* border: 1px solid black;  */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    cursor: pointer;
+.CreateAccountLogin{
+    margin-left: 52px;
+    margin-top: 33px;
+    padding-bottom: 59px;
 }
-.signinbox{
-    align-items: center;
-    justify-content: center;
-    display: flex;
+.CreateAccountbtn{
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: 5px bold;
+    color: var(--gm-colortextbutton-ink-color, #1a73e8);
+    font-family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
 }
-.mat-form-field {
-width: 300px;
+.LoginBtn{
+    margin-left: 180px;
+}
+.NotYourComputer{
+    font-weight: 23px bold;
+    color: #5f6368;
+    margin-left: 52px;
+    margin-top: 35px;
+}
+.Learn{
+    color: var(--gm-colortextbutton-ink-color, #1a73e8);
+}
+.LoginButton{
+    background-color: var(--gm-colortextbutton-ink-color, #1a73e8);
+    color: #ffffff;
+}
+a{
+    text-decoration: none;
+    color: var(--gm-colortextbutton-ink-color, #1a73e8);;
 }

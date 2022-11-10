@@ -1,17 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormGroupDirective} from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormGroupDirective, FormBuilder} from '@angular/forms';
 // import { ErrorStateMatcher } from '@angular/material';
-import { NgForm } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { Router } from '@angular/router';
+// import { NgForm } from '@angular/forms';
+// import { ErrorStateMatcher } from '@angular/material/core';
+// import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/userservice/user.service';
 
 
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
 
 @Component({
   selector: 'app-login',
@@ -19,36 +14,51 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  login!: FormGroup;
+  submitted = false;
+  
 
-  model: any = {};
-
-  email = new FormControl('', [
-   
-    Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-  ]);
-
-  passwordControl = new FormControl('', [
-    Validators.required,
-    Validators.pattern('[A-Za-z0-9]{8}'),
-    
-  ]);
-  match = new MyErrorStateMatcher();
-
-  constructor() { }
+  constructor(private formBuilder: FormBuilder,private user:UserService) { }
 
   ngOnInit(): void {
-    this.resetForm();
+    this.login = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(4)]]
+      });
+    
   }
-
-  resetForm(form?: NgForm) {
-
-    if (form != null)
-      form.reset;
-      this.model = {
-        email: '',
-        password: ''
+  get f(){return this.login.controls;}
+  onSubmit() {
+    this.submitted = true;
+  
+    // stop here if form is invalid
+    if (this.login.valid) {
+      console.log("valid data"+this.login.value);
+      
+      let data={
+       
+       email:this.login.value.email,
+       password:this.login.value.password
+      
       }
+      this.user.login(data).subscribe((response:any)=>{
+       
+       console.log("response",response.data);
+       localStorage.setItem('token',response.data)
+      }
+      )
+    }else{
+      console.log("Invalid", this.login.value);
+      
+    }
+  
+    // display form values on success
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.login.value));
   }
+  
+  
 
 
 }
+
+

@@ -1,19 +1,29 @@
 <div class="OuterDiv">
     <div class="InnerDiv">
-        <div >
+        <div *ngIf="isShow">
             <input class="search" type="text" placeholder="Title">
+            <div class="Img"> <img src="assets/pushpin.png" alt="" width="25px"/></div>
         </div>
-            <div > 
+            <div class="note" *ngIf="!isShow || isShow" (click)="show()" > 
                 <input class="mySearch" type="text" placeholder="Take a note" >
-                <!-- <div class="divImg"></div> <img src="assets/pushpin.png" alt=""/></div> -->
+                <div class="row" *ngIf="!isShow" (click)="show()">
+                
+                    <div class="Imgone"> <img src="assets/checkbox.png" alt="" width="25px"/></div>
+                    <div class="Imgtwo"> <img src="assets/edit.png" alt="" width="25px"/></div>
+                    <div class="Imgthree"> <img src="assets/image.png" alt="" width="25px"/></div>
+                </div>
+                
+                <!-- <div class="Img"> <img src="assets/pushpin.png" alt="" width="25px"/></div> -->
+                <!-- <div class="Img"> <img src="assets/pushpin.png" alt="" width="25px"/></div> -->
             </div>
-        <div >
+            
+        <div *ngIf="isShow" >
             <div class="ic" style="flex-direction: row;">
                 <div>
                     <app-icon></app-icon>
                 </div>
                 <div class="close">
-                    <button>Close</button>
+                    <button (click)="close()">Close</button>
                 </div>
             </div>
         </div>

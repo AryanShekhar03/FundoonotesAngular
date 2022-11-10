@@ -1,7 +1,7 @@
 <div class="menu">
     <mat-toolbar color="primary" fxLayout="row">
         <div class="title-bar" >                   
-            <mat-icon >menu</mat-icon>
+            <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
             <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" alt="fundoo icon" >
             <div className="textKeep"><p>Fundoo</p></div>
         </div>
@@ -35,7 +35,7 @@
         <mat-nav-list class="sidenav-list">
             <div>
                 <div>
-                    <a mat-list-item routerLink="home" routerLinkActive="active">
+                    <a mat-list-item routerLink="notes" routerLinkActive="active">
                         <img src="assets/lightbulb.png" alt="" width="29px">
                         <span style="margin-left: 30px;">Notes</span>
                     </a>

@@ -1,44 +1,41 @@
-<div class='container'>
-    
-    <div class='googleContainer'>
-   
-        <span class="Title1">F</span>
-        <span class="Title2">u</span>
-        <span class="Title3">n</span>
-        <span class="Title4">d</span>
-        <span class="Title5">o</span>
-        <span class="Title6">o</span></div>
-
-        <div class='SigninContainer'><span>Sign in</span></div>
-        <div class='signinText'><span>Use Your Google Account</span></div>
-        <div class='TextBoxes'>
-            <form style="text-align:center" #loginForm="ngForm">
-
-            <div class="signinbox">
-                <mat-form-field appearance="outline">
-                    <input matInput placeholder="Email" type="email" name="email"  [formControl]="email" [errorStateMatcher]="match" [(ngModel)]="model.email" required>
-                    <mat-error *ngIf="email.hasError('required')">Email Address is required</mat-error>
-                    <mat-error *ngIf="email.hasError('pattern') && !email.hasError('required') ">Enter Valid Email address</mat-error>
-            
-                </mat-form-field>
-            </div>
-            <div class="signinbox">
-                <mat-form-field appearance="outline">
-                    <input matInput placeholder="Password" type="password" name="password"  [formControl]="passwordControl"  [errorStateMatcher]="match" [(ngModel)]="model.password" required>
-                    <mat-error *ngIf="passwordControl.hasError('required')">Password is required</mat-error>
-                    <mat-error *ngIf="passwordControl.hasError('pattern') && !passwordControl.hasError('required') ">Enter a valid Password</mat-error>
-            
-                </mat-form-field>
-            </div>
-            </form>
-            
+<mat-card class="mat-cards">
+    <form [formGroup]="login" (ngSubmit)="onSubmit()">
+    <div>
+<div class="" fxLayoutAlign="center start">
+    <h1 class="head-style"><span class="Fundoo-f">F</span><span
+        class="Fundoo-u">u</span><span class="Fundoo-n">n</span><span class="Fundoo-d">d</span><span
+        class="Fundoo-o">o</span><span class="Fundoo-oo">o</span></h1>
         </div>
-        <div class='forgetmailText'><p routerLink="/forgetpassword" >Forget Password?</p></div>
-        <div id="text"><span>Not Your Computer? Use Guest mode to sign in privately.</span></div>
-        <div class='learnMoreText'><span>Learn more</span></div>
-        <div class='createAccount'>
-            <div class='createAccountText'><p routerLink="/register" >Create Account</p></div>
-            <!-- <div class='createAccountButton'><Button style="background-color:blue ;" variant="contained" size='small' onClick={onsubmit} size="large">Next</Button></div> -->
-            <button style="background-color:blue ;  "type="submit">login</button>
-        </div>
+        <div class="" fxLayoutAlign="center start"> <h2>Sign in</h2></div>
+            <div class="" fxLayoutAlign="center start"><h3>Use your Fundoo Account</h3>
 </div>
+
+<div>
+<div fxLayoutAlign="center start">
+    <mat-form-field appearance="outline" class="LabelWidth">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Placeholder"  formControlName="email">
+        <mat-error>Enter Email</mat-error>
+    </mat-form-field>
+</div>
+<div fxLayoutAlign="center start">
+    <mat-form-field appearance="outline" class="LabelWidth">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Placeholder" type="password"  formControlName="password">
+        <mat-error>Enter Password</mat-error>
+    </mat-form-field>
+</div>
+<div class="ForgetPass">
+    <p routerLink="/forgetpassword" > Forget Password?</p>
+  
+</div>
+<div class="NotYourComputer"> <p>Not your computer? Use Guest mode to sign in privately.<br><span class="Learn">Learn more</span></p></div>
+<div class="CreateAccountLogin" style="display: flex;">
+<div class="CreateAccountbtn" routerLink="register"><a routerLink="/register">Create Account</a>
+</div><div class="LoginBtn"><button mat-raised-button class="LoginButton">Login</button></div>
+</div>
+</div>
+
+</div>
+    </form>
+</mat-card>

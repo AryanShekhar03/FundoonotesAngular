@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgForm } from '@angular/forms';
+import { UserService } from 'src/app/services/userservice/user.service';
 
 @Component({
   selector: 'app-forgetpassword',
@@ -8,17 +9,41 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./forgetpassword.component.scss']
 })
 export class ForgetpasswordComponent implements OnInit {
-  model: any = {};
-
-  emailcontrol = new FormControl('', [
-   
-    Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-  ]);
+  forgetpassword!: FormGroup;
+  submitted = false;
   
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder,private user:UserService) { }
 
   ngOnInit(): void {
+    this.forgetpassword = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]]
+      });
   }
+  get f(){return this.forgetpassword.controls;}
+  onSubmit() {
+    this.submitted = true;
+  
+    // stop here if form is invalid
+    if (this.forgetpassword.valid) {
+      console.log("valid data"+this.forgetpassword.value);
+      
+      let data={
+       
+       email:this.forgetpassword.value.email
+      
+      }
+      this.user.forgetpassword(data).subscribe((response:any)=>{
+       
+       console.log(response);
+      }
+      )
+    }else{
+      console.log("Invalid", this.forgetpassword.value);
+      
+    }
+  
+    }
+  
 
 }

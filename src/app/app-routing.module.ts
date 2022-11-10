@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
-import { ForgetpasswordComponent } from './Components/forgetpassword/forgetpassword.component';
+import { ForgetpasswordComponent } from './Components/Forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { ArchiveComponent } from './Components/archive/archive.component';

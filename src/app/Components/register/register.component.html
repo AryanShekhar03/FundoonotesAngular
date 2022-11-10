@@ -1,94 +1,73 @@
-<div class='supercontainer'>
-    <div class='signupcontainer'>
-        <div class='google'>
-            <span class='Title1'>F</span>
-            <span class='Title2'>u</span>
-            <span class='Title3'>n</span>
-            <span class='Title4'>d</span>
-            <span class='Title5'>o</span>
-            <span class='Title6'>o</span>
-        </div>
-
-        <div class='createaccount'><span>Create your Fundoo Account</span></div>
-    <form   #registrationFrom="ngForm"  >
-        <!-- {{registrationFrom.submitted}} -->
+<mat-card class="mat-cards">
+    <form [formGroup]="register" (ngSubmit)="onSubmit()">
+    <div>
         
-        <div class='fandlbox'>
-    
-            <mat-form-field  floatLabel="auto" appearance="outline">
-                <!-- <mat-label>First name</mat-label> -->
-                <input matInput placeholder="First name" name="First name" type="text" [formControl]="Firstname" [(ngModel)]="model.Firstname">
-                <!-- [ngClass]="{'is-invalid':form.get('Firstname').touched && form.get('Firstname').invalid}"> --> 
+        <div fxLayoutAlign="start">
+            <h1 class="head-style"><span class="Fundoo-f">F</span><span class="Fundoo-u">u</span><span
+                    class="Fundoo-n">n</span><span class="Fundoo-d">d</span><span class="Fundoo-o">o</span><span
+                    class="Fundoo-oo">o</span></h1>
 
-                <mat-error *ngIf="Firstname.hasError('required')">firstName is required</mat-error>
-                <!-- <mat-error *ngIf="form.get('Firstname').touched && form.get('Firstname').invalid"></mat-error> -->
-            </mat-form-field>
-                
-            
-            <mat-form-field appearance="outline">
-                <!-- <mat-label>Last name</mat-label> -->
-                <input matInput placeholder="Last name" name="Last name" type="text" [formControl]="Lastname" [(ngModel)]="model.Lastname">
-                <mat-error *ngIf="Lastname.hasError('required')">LastName is required</mat-error>
-                
-            </mat-form-field>
         </div>
-        <div class='emailbox'>
-            <mat-form-field appearance="outline">
-                <!-- <mat-label>Username </mat-label> -->
-                <input matInput placeholder="Username" name="Username" type="email" [formControl]="Username" [(ngModel)]="model.Username">
-                            <mat-error *ngIf="Username.hasError('required')">Email Address is required</mat-error>
-                            <mat-error *ngIf="Username.hasError('pattern') && !Username.hasError('required') ">Enter Valid Email address</mat-error>
-      
-            </mat-form-field>
-       
-            <div class='emailtxt'><span>you can use letters,numbers & periods</span></div></div>
-            <div class='emailblue'><span>Use my current email address instead</span></div>
-        
-
-            <div class='fandbox'>
+        <div fxLayoutAlign="start">
+            <h3>Create Your Fundoonote Account</h3>
+        </div>
+        <div fxLayoutAlign="space-between start">
+            <div fxLayoutAlign="start">
                 <mat-form-field appearance="outline">
-                    <!-- <mat-label>Password </mat-label> -->
-                    <input matInput placeholder="password" name="password" [type]="inputType" [formControl]="passwordControl" [(ngModel)]="model.password">
-                    
-                    <mat-error *ngIf="passwordControl.hasError('required')">Password is required</mat-error>
-                    <mat-error *ngIf="passwordControl.hasError('pattern') && !passwordControl.hasError('required') ">Enter a valid Password</mat-error>
-                </mat-form-field> 
-                  
-             
-            
-                
-                <mat-form-field appearance="outline">
-                    <mat-label>Confirm </mat-label>
-                    <!-- <mat-form-field appearance="outline"> -->
-                        <!-- <mat-label>Email</mat-label> -->
-                        <input matInput placeholder="Confirm">
-            
-                    
+                    <mat-label>First name</mat-label>
+                    <input matInput placeholder="Placeholder" formControlName="firstName">
+                    <mat-error>Enter Firstname</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="lastname-space">
+                    <mat-label>Last name</mat-label>
+                    <input matInput placeholder="Placeholder" formControlName="lastName">
+                    <mat-error>Enter Lastname</mat-error>
                 </mat-form-field>
             </div>
-            
-    </form>
-                <div class='text'><span>Use 8 or more characters with a mix of letters, numbers &
-                symbols</span></div>
-
-             <div class="form"> <input
-            (change)="showPassword($event)"
-             type="checkbox" class="formcheck">Show Password</div>
-
-                <div class="lastcontainer">
-                    <p routerLink="/login" >Sign in instead</p>
-                    <!-- <button style="background-color:blue ;"variant="contained" size='small' onClick={onsubmit} size="large">Next</button> 
-                     --><button style="background-color:blue ;  "type="submit">Register</button>
-                </div> 
+            <div class="img-width">
+                <img src="assets/account.png" alt="" class="Register-img">
+                <figcaption class="img-content">One account. All of Fundoo<br> working for you.</figcaption>
+            </div>
+        </div>
+        <div class="username-margin" fxLayoutAlign="start">
+            <mat-form-field appearance="outline" class="username">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="userName">
+                <mat-error>Enter username</mat-error>
+            </mat-form-field>
 
 
+        </div>
+        <div fxLayoutAlign="start" class="Suggestion">You Can Use Letter, Number & Periods</div>
+        <div fxLayoutAlign="start" class="UseCurrentEmail">Use my current email address instead</div>
+        <div fxLayoutAlign="start">
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Placeholder" type="password" [type]="inputType" formControlName="password">
+                <mat-error>Enter password</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="lastname-space">
+                <mat-label>Confirm password</mat-label>
+                <input matInput placeholder="Placeholder" type="password" [type]="inputType" formControlName="confirmpassword">
+                <mat-error>Enter confirm password</mat-error>
+            </mat-form-field>
+        </div>
+        <div fxLayoutAlign="start" class="Suggestion">Use 8 or more characters with a mix of letters, numbers & symbols
+        </div>
+        <div fxLayoutAlign="start">
+            <div class="Show-pass"><input
+                (change)="showPassword($event)"
+                 type="checkbox" class="formcheck">Show Password</div>
+        </div>
     </div>
-    <div class='containerImg'>
-        <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt='' />
-
-         <div class='imgtxt'>One account. All of Google working for you</div>
-            
-             
-    </div>
-
-</div>
+    <div style="display:flex" class="SignNextbtn">
+        <div class="btn-Sign">
+            <p routerLink="/login">  Sign in instaed</p> 
+         </div>
+         <div class="btn-next">
+             <button mat-raised-button class="SignButton" (click)="onSubmit">Signup</button>
+         </div>
+         
+     </div>
+ </form>
+ </mat-card>

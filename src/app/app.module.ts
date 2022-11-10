@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { ForgetpasswordComponent } from './Components/forgetpassword/forgetpassword.component';
+import { ForgetpasswordComponent } from './Components/Forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import {MatIconModule} from '@angular/material/icon';
@@ -25,6 +25,8 @@ import { DisplaynoteComponent } from './Components/displaynote/displaynote.compo
 import { IconComponent } from './Components/icon/icon.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -60,7 +62,9 @@ import {MatCardModule} from '@angular/material/card';
     MatListModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
