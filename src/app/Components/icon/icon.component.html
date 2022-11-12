@@ -1,20 +1,23 @@
-<div class="OuterDiv">
-    <div role="button" class="add">
-        <img class="divImg" src="assets/alert.png" alt="" width="25px" >
-    </div>
-    <div role="button" class="add">
-        <img class="divImg" src="assets/personadd.png" alt="" width="25px">
-    </div>
-    <div role="button" class="add">
-        <img class="divImg" src="assets/palette.png" alt="" width="25px">
-    </div>
-    <div role="button" class="add">
-        <img class="divImg" src="assets/image.png" alt=""width="25px">
-    </div>
-    <div role="button" class="add">
-        <img class="divImg" src="assets/archive.png" alt="" width="25px">
-    </div>
-    <div role="button" class="add">
-        <img class="divImg" src="assets/more.png" alt="" width="25px">
-    </div>
+<div class="icons">
+     <img src="assets/alert.png" alt="" class="card-icons">
+    <img src="assets/personadd.png" alt="" class="card-icons">
+     <img src="assets/palette.png" alt="" class="card-icons" [matMenuTriggerFor]="paletteMenu">
+        <mat-menu #paletteMenu="matMenu">
+            <!-- <div *ngFor='let colors of colorArray'> -->
+              <!-- <button class="colorIcon" [style.background]="colors.code" (click)="selectColor(colors)"></button> -->
+            <!-- </div> -->
+        </mat-menu>
+    
+    <img src="assets/image.png" alt=""class="card-icons">
+    <img src="assets/archive.png" alt="" class="card-icons" (click)="onArchive()">
+    <img src="assets/more.png" alt=""class="card-icons" [matMenuTriggerFor]="more">
+    <mat-menu #more="matMenu">
+        <button mat-menu-item class="matmenuBtn" >Delete note</button>
+        <button mat-menu-item class="matmenuBtn">Add Label</button>
+        <button mat-menu-item class="matmenuBtn">Add drawing</button>
+        <button mat-menu-item class="matmenuBtn">Make a copy</button>
+        <button mat-menu-item class="matmenuBtn">Show checkboxes</button>
+        <button mat-menu-item class="matmenuBtn">Copy to google Docs</button>
+      </mat-menu>
+      
 </div>

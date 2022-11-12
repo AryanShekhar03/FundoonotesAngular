@@ -28,7 +28,7 @@ export class ResetpasswordComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
   
-    // stop here if form is invalid
+    
     if (this.resetpassword.valid) {
       console.log("valid data"+this.resetpassword.value);
      

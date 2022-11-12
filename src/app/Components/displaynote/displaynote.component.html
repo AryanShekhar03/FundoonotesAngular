@@ -1,12 +1,14 @@
-<div class="innDiv">
-    <div class="OutDiv" >
-        <div >
-            <div>
-                <p> </p>
-            </div>
-            <div>
-                <p></p>
-            </div>
+<div class="boxsize">
+    <div *ngFor="let notes of childMessage" class="con">
+    <mat-card class="mat-box">
+        <div (click)="openDialog(notes)"> 
+
+        <h2 (click)="openDialog(notes)">{{notes.title}}</h2>
+         <p (click)="openDialog(notes)">{{notes.description}}</p> 
+         </div>
+         <div class="icons">
+        <app-icon></app-icon>
         </div>
+    </mat-card>
     </div>
-</div>
+    </div> 

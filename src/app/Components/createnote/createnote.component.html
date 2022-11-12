@@ -1,11 +1,12 @@
 <div class="OuterDiv">
+    <form [formGroup]="createNoteForm" (ngSubmit)="close">
     <div class="InnerDiv">
         <div *ngIf="isShow">
-            <input class="search" type="text" placeholder="Title">
+            <input class="search" type="text" placeholder="Title" formControlName="title">
             <div class="Img"> <img src="assets/pushpin.png" alt="" width="25px"/></div>
         </div>
             <div class="note" *ngIf="!isShow || isShow" (click)="show()" > 
-                <input class="mySearch" type="text" placeholder="Take a note" >
+                <input class="mySearch" type="text" placeholder="Take a note"  formControlName="description" >
                 <div class="row" *ngIf="!isShow" (click)="show()">
                 
                     <div class="Imgone"> <img src="assets/checkbox.png" alt="" width="25px"/></div>
@@ -28,4 +29,5 @@
             </div>
         </div>
     </div>
+</form>
 </div>

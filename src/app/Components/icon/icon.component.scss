@@ -1,23 +1,18 @@
-.OuterDiv{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 490px;
-    height: 40px;
+.card-icons{
+    width: 22px;
+    margin-top: 20px;
+    padding: 11px;
 }
-.add{
-    padding-top: 7px;
-    border: 1px;
-    margin: 0 8px;
-    .material-symbols-outlined{
-        padding: 8px;
-    }
+
+
+.matmenuBtn{
+    line-height: 1.25rem;
+    padding: 5px 10px 5px 17px;
+}
+.colorIcon{
+    border-radius: 100px;
+    border: none;
+    height: 25px;
+    width: 25px;
     cursor: pointer;
-    :hover{
-        border-radius: 50%;
-        background-color: #f1f3f4;
-    }
- .divImg{
-    margin-right: 20px;
- }   
 }

@@ -9,6 +9,8 @@ import { Console } from 'console';
   providedIn: 'root'
 })
 export class UserService {
+  token: any;
+
   constructor(private http:HttpService) { }
   register(data:any){
     let header={
@@ -40,9 +42,11 @@ login(data:any){
   }
 
   resetpassword(data:any){
+    console.log(data)
     let header={
       headers:new HttpHeaders({
-        'Content-type':'application/json'
+        'Content-type':'application/json',
+        'Authorization': 'Bearer' + this.token
       })
     }
   return this.http.postservice('https://localhost:44328/api/User/ResetPassword',data,false,header);

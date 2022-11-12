@@ -27,7 +27,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import { UpdateNotesComponent } from './Components/update-notes/update-notes.component';
+// import { MatDialogModule } from '@angular/material/dialog/dialog-module';
+ import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     CreatenoteComponent,
     DisplaynoteComponent,
     IconComponent,
+    UpdateNotesComponent,
     
   
   ],
@@ -64,7 +67,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatIconModule,
     MatCardModule,
     HttpClientModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+     MatDialogModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
