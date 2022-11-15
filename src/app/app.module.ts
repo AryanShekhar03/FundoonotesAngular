@@ -30,6 +30,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { UpdateNotesComponent } from './Components/update-notes/update-notes.component';
 // import { MatDialogModule } from '@angular/material/dialog/dialog-module';
  import { MatDialogModule } from '@angular/material/dialog';
+ import {MatExpansionModule} from '@angular/material/expansion';
+ 
 
 @NgModule({
   declarations: [
@@ -69,6 +71,7 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
     HttpClientModule,
     MatCheckboxModule,
      MatDialogModule,
+     MatExpansionModule
     
   ],
   providers: [],

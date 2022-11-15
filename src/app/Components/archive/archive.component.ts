@@ -14,15 +14,17 @@ export class ArchiveComponent implements OnInit {
     this.getArchiveNotes();
   }
   getArchiveNotes(){
-    this.note.getNotes().subscribe((response:any)=>{
-      this.archiveList=response.data;
-      console.log(this.archiveList);
-      this.archiveList.reverse();
-      this.archiveList=this.archiveList.filter((object:any)=>{
-       return object.archieve==true;
-      })
-      console.log("Archive notes ",this.archiveList);
-     })
-  }
+     
+     this.note.getNotes().subscribe((response:any)=>{
+       this.archiveList=response.data;
+       console.log(this.archiveList);
+      //  this.archiveList.reverse();
+      //  this.archiveList=this.archiveList.filter((object:any)=>{
+      //   return object.archieve==true;
+       })
+       console.log("Archive notes ",this.archiveList);
+      
+   }
+ 
 
 }

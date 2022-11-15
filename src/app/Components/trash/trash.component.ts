@@ -7,24 +7,13 @@ import { NotesService } from 'src/app/services/noteservice/notes.service';
   styleUrls: ['./trash.component.scss']
 })
 export class TrashComponent implements OnInit {
-  trashList:any;
+  // trashList:any;
 
-  constructor(private note:NotesService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.TrashList();
+    // this.TrashList();
   }
-  TrashList(){
-    this.note.getNotes().subscribe((response:any)=>{
-      this.trashList=response.data;
-      console.log(this.trashList);
-      this.trashList.reverse();
-      this.trashList=this.trashList.filter((object:any)=>{
-       return object.trash==true;
-      })
-      console.log("trash notes ",this.trashList);
-     })
- 
-  }
+
 
 }

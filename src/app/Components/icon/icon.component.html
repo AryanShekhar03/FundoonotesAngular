@@ -1,18 +1,21 @@
 <div class="icons">
-     <img src="assets/alert.png" alt="" class="card-icons">
-    <img src="assets/personadd.png" alt="" class="card-icons">
-     <img src="assets/palette.png" alt="" class="card-icons" [matMenuTriggerFor]="paletteMenu">
-        <mat-menu #paletteMenu="matMenu">
-            <!-- <div *ngFor='let colors of colorArray'> -->
-              <!-- <button class="colorIcon" [style.background]="colors.code" (click)="selectColor(colors)"></button> -->
-            <!-- </div> -->
-        </mat-menu>
+     <img src="assets/alert.png" alt="" class="card-icons"  *ngIf="!isTrash">
+    <img src="assets/personadd.png" alt="" class="card-icons"  *ngIf="!isTrash">
+    <a routerLink="."><img src="assets/palette.png" alt="" class="card-icons" *ngIf="!isTrash" [matMenuTriggerFor]="color">
+     <mat-menu #color="matMenu" yPosition="below">
+        <div *ngFor="let color of colorArray" fxLayout="row row wrap" fxLayourAlign="center" class="button-clr">
+          
+          <button mat-mini-fab [style.background-color]="color?.colorCode"
+          (click)="selectColor(color?.colorCode)"></button>
+        </div>
+    </mat-menu>
+    </a>
     
     <img src="assets/image.png" alt=""class="card-icons">
-    <img src="assets/archive.png" alt="" class="card-icons" (click)="onArchive()">
-    <img src="assets/more.png" alt=""class="card-icons" [matMenuTriggerFor]="more">
+    <img *ngIf="!isArchieve && !isTrash" src="assets/archive.png" alt="" class="card-icons" (click)="onArchive()">
+    <img src="assets/more.png" alt=""class="card-icons" [matMenuTriggerFor]="more" *ngIf="!isTrash">
     <mat-menu #more="matMenu">
-        <button mat-menu-item class="matmenuBtn" >Delete note</button>
+        <button mat-menu-item class="matmenuBtn"(click)="onDelete()" >Delete note</button>
         <button mat-menu-item class="matmenuBtn">Add Label</button>
         <button mat-menu-item class="matmenuBtn">Add drawing</button>
         <button mat-menu-item class="matmenuBtn">Make a copy</button>

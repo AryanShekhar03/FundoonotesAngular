@@ -31,14 +31,14 @@ export class NotesService {
     }
     return this.http.getservice('https://localhost:44328/api/Notes/GetAll',true,header);
    }
-   updateNotes(data:any, noteId:any){
+   updateNotes(data:any, notesId:any){
     let header={
       headers:new HttpHeaders({
         'Content-Type':'application/json',
         'Authorization':'Bearer '+this.token
       })
     }
-    return this.http.putservice('https://localhost:44328/api/Notes/Update?NotesID='+noteId,data,true,header);
+    return this.http.putservice('https://localhost:44328/api/Notes/Update?NotesID='+notesId,data,true,header);
    }
    ArchiveNotes(data:any ){
     let header={
@@ -58,4 +58,14 @@ export class NotesService {
     }
     return this.http.putservice('https://localhost:44328/api/Notes/TrashNotes?NotesID'+data,{},true,header);
    }
+   NotesColor(data:any ){
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization': 'Bearer '+ this.token
+      })
+    }
+    return this.http.putservice(`https://localhost:44328/api/Notes/Color?NotesId=${data.notesId}&color=${data.color}`,{},true,header)
+  }
+   
 }

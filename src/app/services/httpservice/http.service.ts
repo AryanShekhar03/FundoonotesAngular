@@ -5,10 +5,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpService {
+  constructor(private httpClient:HttpClient) { }
   getservice(url:any, token:boolean=false, option:any){
     return this.httpClient.get(url, token && option);
    }
-  constructor(private httpClient:HttpClient) { }
+  
   postservice(url:any, data:any, token:boolean=false, option:any){
    return this.httpClient.post(url,data,token && option);
   }
