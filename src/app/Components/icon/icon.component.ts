@@ -15,18 +15,18 @@ export class IconComponent implements OnInit {
   isTrash: boolean = false;
 
 
-  colorArray= [{colorCode:"maroon"},
-  {colorCode:"silver"},
+  colorArray= [{colorCode:"Red"},
+  {colorCode:"Orange"},
   {colorCode:"Yellow"},
+  {colorCode:"Green"},
+  {colorCode:"Teal"},
+  {colorCode:"Blue"},
+  {colorCode:"Dark Blue"},
   {colorCode:"Purple"},
   {colorCode:"pink"},
-  {colorCode:"chocolate"},
-  {colorCode:"Wheat"},
-  {colorCode:"indigo"},
-  {colorCode:"hotpink"},
-  {colorCode:"lightblue"},
-  {colorCode:"green"},
-  {colorCode:"olive"}];
+  {colorCode:"Brown"},
+  {colorCode:"Gray"}];
+  // {colorCode:"olive"}];
   
   
   noteListId:any;
@@ -47,7 +47,7 @@ export class IconComponent implements OnInit {
   
   onArchive() {
     let reqData={
-      NotesID:[this.noteObject.notesId],
+      NotesId:[this.noteObject.noteId],
     }
     console.log(reqData);
     this.note.ArchiveNotes(this.noteObject.notesId).subscribe((response: any) => {
@@ -82,8 +82,14 @@ export class IconComponent implements OnInit {
       
        console.log("color", reqData)
      })
-   }   
- }
+   }  
+   onUnArchievenote() {
+   
+     
+    }
+  }
+ 
+ 
 
    
 

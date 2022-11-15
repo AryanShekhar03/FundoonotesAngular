@@ -8,7 +8,7 @@ import { UpdateNotesComponent } from '../update-notes/update-notes.component';
   styleUrls: ['./displaynote.component.scss']
 })
 export class DisplaynoteComponent implements OnInit {
-  @Input() childMessage:any;
+  @Input()childMessage:any;
   
 
   constructor(public dialog:MatDialog) { }

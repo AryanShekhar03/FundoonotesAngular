@@ -1,7 +1,7 @@
 <div class="icons">
      <img src="assets/alert.png" alt="" class="card-icons"  *ngIf="!isTrash">
     <img src="assets/personadd.png" alt="" class="card-icons"  *ngIf="!isTrash">
-    <a routerLink="."><img src="assets/palette.png" alt="" class="card-icons" *ngIf="!isTrash" [matMenuTriggerFor]="color">
+    <img src="assets/palette.png" alt="" class="card-icons" *ngIf="!isTrash" [matMenuTriggerFor]="color">
      <mat-menu #color="matMenu" yPosition="below">
         <div *ngFor="let color of colorArray" fxLayout="row row wrap" fxLayourAlign="center" class="button-clr">
           
@@ -9,10 +9,14 @@
           (click)="selectColor(color?.colorCode)"></button>
         </div>
     </mat-menu>
-    </a>
+    <img *ngIf="!isArchieve && !isTrash" src="assets/archive.png" alt=""
+        matTooltip="Archive" class="card-icons" (click)="onArchive()">
+      <img *ngIf="isArchieve && !isTrash" src="assets/unarchive.png" alt=""
+        matTooltip="UnArchive" class="card-icons" (click)="onUnArchievenote()">
+    
     
     <img src="assets/image.png" alt=""class="card-icons">
-    <img *ngIf="!isArchieve && !isTrash" src="assets/archive.png" alt="" class="card-icons" (click)="onArchive()">
+    <!-- <img *ngIf="isArchieve && isTrash" src="assets/archive.png" alt="" class="card-icons" (click)="onArchive()"> -->
     <img src="assets/more.png" alt=""class="card-icons" [matMenuTriggerFor]="more" *ngIf="!isTrash">
     <mat-menu #more="matMenu">
         <button mat-menu-item class="matmenuBtn"(click)="onDelete()" >Delete note</button>
@@ -22,5 +26,6 @@
         <button mat-menu-item class="matmenuBtn">Show checkboxes</button>
         <button mat-menu-item class="matmenuBtn">Copy to google Docs</button>
       </mat-menu>
+     
       
 </div>
