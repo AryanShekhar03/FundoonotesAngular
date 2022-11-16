@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private user:UserService) { }
 
   ngOnInit(): void {
+    // localStorage.setItem('SeesionUser',this.login) 
     this.login = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(4)]]
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
   
-    // stop here if form is invalid
+    
     if (this.login.valid) {
       console.log("valid data"+this.login.value);
       

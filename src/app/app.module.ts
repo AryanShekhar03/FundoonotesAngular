@@ -31,6 +31,7 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
 // import { MatDialogModule } from '@angular/material/dialog/dialog-module';
  import { MatDialogModule } from '@angular/material/dialog';
  import {MatExpansionModule} from '@angular/material/expansion';
+ import { AuthgaurdService } from './services/Authgaurdservice/authgaurd.service';
  
 
 @NgModule({
@@ -74,7 +75,7 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
      MatExpansionModule
     
   ],
-  providers: [],
+  providers: [AuthgaurdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

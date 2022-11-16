@@ -61,10 +61,10 @@ export class IconComponent implements OnInit {
   onDelete() {
 
     let reqData={
-      NotesID:[this.noteObject.notesId],
+      NotesID:[this.noteObject.noteId],
     }
     console.log(reqData)
-    this.note.TrashNotes(this.noteObject.notesId).subscribe((response: any) => {
+    this.note.TrashNotes(this.noteObject.noteId).subscribe((response: any) => {
       console.log("Note trash Successfully",response);
       
     })
@@ -84,13 +84,14 @@ export class IconComponent implements OnInit {
      })
    }  
    onUnArchievenote() {
-   
+    this.note.ArchiveNotes(this.noteObject.notesId).subscribe((response: any) => {
+      console.log(response);
      
-    }
-  }
+    })
+   }
  
  
 
    
 
-
+  }
