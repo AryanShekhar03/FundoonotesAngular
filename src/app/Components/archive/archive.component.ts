@@ -16,7 +16,7 @@ export class ArchiveComponent implements OnInit {
   getArchiveNotes(){
     this.note.getNotes().subscribe((response:any)=>{
       this.archiveList=response;
-      console.log(this.archiveList);
+      // console.log(this.archiveList);
       this.archiveList.reverse();
       this.archiveList=this.archiveList.filter((object:any)=>{
        return object.archieve==true;

@@ -32,6 +32,17 @@ export class NotesComponent implements OnInit {
       console.log(e);
     this.getAllNotes();
     }
+    // updatedicon($event:any) {
+    //   console.log($event);
+    //   this.getAllNotes();
+    // }
+    // receiveMessagearchive($event:any){
+    //   console.log($event);
+    //   this.getAllNotes();
+    // }
+    // iconRefresh($event:any){
+    //   console.log($event)
+    //   this.getAllNotes();}
   
   // getAllNotes(){
   //   this.notes.getNotes().subscribe((response:any)=>{

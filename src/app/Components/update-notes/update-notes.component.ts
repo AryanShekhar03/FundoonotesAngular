@@ -9,11 +9,11 @@ import { NotesService } from 'src/app/services/noteservice/notes.service';
 })
 export class UpdateNotesComponent implements OnInit {
   title: any
-  description: any
+  body: any
   id: any
   constructor(private notes:NotesService ,  public dialogRef: MatDialogRef<UpdateNotesComponent>,  @Inject(MAT_DIALOG_DATA) public data: any) {
     this.title=data.title;
-    this.description=data.description;
+    this.body=data.body;
     this.id=data.notesId;
    }
 
@@ -22,7 +22,7 @@ export class UpdateNotesComponent implements OnInit {
   closeDialog() {
     let reqData = {
       title: this.title,
-      description: this.description,
+      body: this.body,
       notesId: this.id,
     }
     this.notes.updateNotes(reqData, this.id).subscribe((response:any) =>{ 

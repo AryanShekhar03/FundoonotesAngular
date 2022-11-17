@@ -8,6 +8,7 @@ import { NotesService } from 'src/app/services/noteservice/notes.service';
   styleUrls: ['./createnote.component.scss']
 })
 export class CreatenoteComponent implements OnInit {
+  
   isShow = false;
   createNoteForm!:FormGroup;
   submitted=false;
@@ -17,7 +18,7 @@ export class CreatenoteComponent implements OnInit {
   ngOnInit(): void {
     this.createNoteForm=this.formbuilder.group({
       title:['',Validators.required],
-      description:['',Validators.required]
+      body:['',Validators.required]
     });
   }
   show() {
@@ -30,7 +31,7 @@ export class CreatenoteComponent implements OnInit {
     console.log("notes created successfully");
     let resdata={
       title:this.createNoteForm.value.title,
-      description:this.createNoteForm.value.description
+      body:this.createNoteForm.value.body
     }
     console.log(resdata);
     this.note.addNotes(resdata).subscribe((result:any)=>{

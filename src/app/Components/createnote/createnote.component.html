@@ -6,7 +6,7 @@
             <div class="Img"> <img src="assets/pushpin.png" alt="" width="25px"/></div>
         </div>
             <div class="note" *ngIf="!isShow || isShow" (click)="show()" > 
-                <input class="mySearch" type="text" placeholder="Take a note"  formControlName="description" >
+                <input class="mySearch" type="text" placeholder="Take a note"  formControlName="body" >
                 <div class="row" *ngIf="!isShow" (click)="show()">
                 
                     <div class="Imgone"> <img src="assets/checkbox.png" alt="" width="25px"/></div>

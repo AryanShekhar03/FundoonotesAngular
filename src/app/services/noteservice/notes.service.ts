@@ -22,7 +22,7 @@ export class NotesService {
     return this.http.postservice('https://localhost:44328/api/Notes/CreateNotes',data,true,header);
    }
    getNotes(){
-    console.log(this.token);
+    
     let header={
       headers:new HttpHeaders({
         'Content-Type':'application/json',

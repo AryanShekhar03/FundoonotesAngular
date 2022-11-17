@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NotesService } from 'src/app/services/noteservice/notes.service';
 import { TrashComponent } from '../trash/trash.component';
 import { ArchiveComponent } from '../archive/archive.component';
@@ -11,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class IconComponent implements OnInit {
  @Input()noteObject:any
+//  @Output() changeNoteEvent = new EventEmitter<string>();
+// @Output() displayicons = new EventEmitter<string>();
  isArchieve: boolean = false;
   isTrash: boolean = false;
 
