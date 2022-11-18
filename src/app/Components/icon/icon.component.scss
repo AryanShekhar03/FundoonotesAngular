@@ -1,60 +1,8 @@
-.card-icons{
-    width: 22px;
-    margin-top: 20px;
-    padding: 11px;
-}
-
-
-.matmenuBtn{
-    line-height: 1.25rem;
-    padding: 5px 10px 5px 17px;
-}
-.colorIcon{
+.OuterDiv{
     display: flex;
-    border-radius: 100px;
-    border: none;
-    height: 25px;
-    width: 25px;
-    cursor: pointer;
-}
-.button-clr{
-    display: flex;
-    // border-radius: 50%;
-    border: none;
-    height: 25px;
-    // width: 25px;
-    cursor: pointer;
-
-}
-.button{
-    border-radius: 50%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}
-.mat-menu-panel {
-    min-width: 151px;
-    max-width: 506px;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    max-height: calc(94vh - 7px);
-    border-radius: 4px;
-    outline: 0;
-    min-height: 91px;
-    margin-left: -115px;
-}
-// .button{
-//     border-radius: 50%;
-
-
-// }
-.mat-menu-content{
-    display: flex;
-    /* border-radius: 100px; */
-    border: none;
-    height: 25px;
-    /* width: 25px; */
-    cursor: pointer;
+    flex-direction: row;
+    align-items: flex-start;
+   
 }
 .add{
     padding-top: 10px;
@@ -64,14 +12,13 @@
     .material-symbols-outlined{
         padding: 10px;
     }
-        // .divImg{
-        //      display: flex;
-        //      width: 23px;
-        //      height: 23px;
-        //      //padding-left: 20px;
-        // }
-    
-     }
+    .divImg{
+        display: flex;
+        width: 23px;
+        height: 23px;
+        //padding-left: 20px;
+    }
+}
     .colour{
         height: 130px;
         width: 170px;
@@ -85,4 +32,7 @@
     width: 40px;
     border-radius: 100px;
    border: 0px solid red;
+}
+.icons{
+    height: 30px;
 }

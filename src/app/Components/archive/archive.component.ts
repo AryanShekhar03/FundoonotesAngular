@@ -23,7 +23,11 @@ export class ArchiveComponent implements OnInit {
       })
       console.log("Archive notes ",this.archiveList);
      })
-  }  
+  } 
+  receiveMessage(event: any) {
+    this.getArchiveNotes();
+  }} 
+
   // receiveMeassage(e:any){
   //   console.log(e);
   // this.getArchiveNotes();
@@ -41,4 +45,4 @@ export class ArchiveComponent implements OnInit {
    
  
 
-}
+

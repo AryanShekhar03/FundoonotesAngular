@@ -1,2 +1,2 @@
-<app-createnote (messageEvent)="receiveMeassage($event)" ></app-createnote> 
-<app-displaynote  [childMessage]="noteArray"> </app-displaynote>
+<app-createnote (messageEvent)="autocreatenote($event)" ></app-createnote> 
+<app-displaynote  [childMessage]="noteArray"  (messageevent)="autodisplay($event)"(refreshDisplay)="autoMessagearchive($event)" (changeNoteEvent)="iconRefresh($event)"> </app-displaynote>

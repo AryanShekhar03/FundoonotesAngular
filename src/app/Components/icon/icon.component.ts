@@ -11,8 +11,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class IconComponent implements OnInit {
  @Input()noteObject:any
-//  @Output() changeNoteEvent = new EventEmitter<string>();
-// @Output() displayicons = new EventEmitter<string>();
+ @Output() changeNoteEvent = new EventEmitter<string>();
+ 
+
  isArchieve: boolean = false;
   isTrash: boolean = false;
 
@@ -48,6 +49,7 @@ export class IconComponent implements OnInit {
   }  
   
   onArchive() {
+  
     let reqData={
       NotesId:[this.noteObject.noteId],
     }
@@ -81,16 +83,16 @@ export class IconComponent implements OnInit {
      };
      this.note.NotesColor(reqData).subscribe((response: any) => {
        console.log(response);
+       this.changeNoteEvent.emit(response);
       
        console.log("color", reqData)
      })
    }  
-   onUnArchievenote() {
+   UnArchieve() {
     this.note.ArchiveNotes(this.noteObject.notesId).subscribe((response: any) => {
-      console.log(response);
-     
+      console.log("note unarchieve", response);
     })
-   }
+  }
  
  
 
