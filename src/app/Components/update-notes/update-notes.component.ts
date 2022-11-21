@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NotesService } from 'src/app/services/noteservice/notes.service';
 
@@ -8,6 +8,7 @@ import { NotesService } from 'src/app/services/noteservice/notes.service';
   styleUrls: ['./update-notes.component.scss']
 })
 export class UpdateNotesComponent implements OnInit {
+  @Output() noteUpdated= new EventEmitter<any>();
   title: any
   body: any
   id: any
@@ -26,11 +27,16 @@ export class UpdateNotesComponent implements OnInit {
       notesId: this.id,
     }
     this.notes.updateNotes(reqData, this.id).subscribe((response:any) =>{ 
-      console.log("update response", response); 
+      console.log("update response", response);
+      this.noteUpdated.emit(response);
             
     })
     this.dialogRef.close()
   }
+  Reload(event:any){
+    console.log(event);
+  }
+    
 }
   
 

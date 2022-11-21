@@ -10,26 +10,28 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./icon.component.scss']
 })
 export class IconComponent implements OnInit {
+  
  @Input()noteObject:any
  @Output() changeNoteEvent = new EventEmitter<string>();
+ @Output() displayicons = new EventEmitter<string>();
  
 
  isArchieve: boolean = false;
   isTrash: boolean = false;
 
 
-  colorArray= [{colorCode:"Red"},
-  {colorCode:"Orange"},
+  colorArray= [{colorCode:"maroon"},
+  {colorCode:"silver"},
   {colorCode:"Yellow"},
-  {colorCode:"Green"},
-  {colorCode:"Teal"},
-  {colorCode:"Blue"},
-  {colorCode:"Dark Blue"},
   {colorCode:"Purple"},
   {colorCode:"pink"},
-  {colorCode:"Brown"},
-  {colorCode:"Gray"}];
-  // {colorCode:"olive"}];
+  {colorCode:"chocolate"},
+  {colorCode:"Wheat"},
+  {colorCode:"indigo"},
+  {colorCode:"hotpink"},
+  {colorCode:"lightblue"},
+  {colorCode:"green"},
+  {colorCode:"olive"}];
   
   
   noteListId:any;
@@ -55,7 +57,8 @@ export class IconComponent implements OnInit {
     }
     console.log(reqData);
     this.note.ArchiveNotes(this.noteObject.notesId).subscribe((response: any) => {
-      console.log("Note Archived Successfully",response);
+      console.log(response);
+      this.displayicons.emit(response);
       
     })
   }
@@ -64,14 +67,16 @@ export class IconComponent implements OnInit {
  
   onDelete() {
 
-    let reqData={
-      NotesID:[this.noteObject.noteId],
-    }
-    console.log(reqData)
-    this.note.TrashNotes(this.noteObject.noteId).subscribe((response: any) => {
+    // let reqData={
+    //   NotesID:[this.noteObject.noteId],
+    // }
+    // console.log(reqData)
+    this.note.TrashNotes(this.noteObject.notesId).subscribe((response: any) => {
       console.log("Note trash Successfully",response);
       
     })
+    // this.note.Trash(this.noteCard.notesId).subscribe((response: any) => {
+    //   console.log("Note trash Successfull", response);
     
    }
    selectColor(color:any)
@@ -86,6 +91,7 @@ export class IconComponent implements OnInit {
        this.changeNoteEvent.emit(response);
       
        console.log("color", reqData)
+       
      })
    }  
    UnArchieve() {
@@ -93,6 +99,7 @@ export class IconComponent implements OnInit {
       console.log("note unarchieve", response);
     })
   }
+ 
  
  
 

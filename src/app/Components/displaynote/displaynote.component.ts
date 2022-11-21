@@ -30,8 +30,8 @@ export class DisplaynoteComponent implements OnInit {
       this.updatedisplay.emit(response);
     })
   }
-  recieveArchiveNote(event: any) {
-    this.changeNoteEvent.emit(event);
+  recieveArchiveNote($event: any) {
+    this.changeNoteEvent.emit($event);
   }
   iconRefresh($event: any) {
     console.log($event);

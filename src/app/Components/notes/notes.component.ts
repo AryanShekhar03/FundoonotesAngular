@@ -25,25 +25,29 @@ export class NotesComponent implements OnInit {
         
             })
     
-    //  console.log(this.noteArray)
+     console.log(this.noteArray)
     })
     }
-    autocreatenote(e:any){
-      console.log(e);
-    this.getAllNotes();
-    }
-    autodisplay($event:any) {
+    receiveMessage($event: any) {
       console.log($event);
       this.getAllNotes();
     }
-    autoMessagearchive($event:any){
+    updatedicon($event:any) {
+      console.log($event);
+      this.getAllNotes();
+    }
+    receiveMessagearchive($event:any){
       console.log($event);
       this.getAllNotes();
     }
     iconRefresh($event:any){
       console.log($event)
-      this.getAllNotes();}
-  
+      this.getAllNotes();
+    }
+    autocreatenote($event:any){
+     console.log($event)
+     this.getAllNotes();
+    }
   // getAllNotes(){
   //   this.notes.getNotes().subscribe((response:any)=>{
   //     this.noteArray=response;

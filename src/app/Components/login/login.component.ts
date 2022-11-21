@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators, FormGroupDirective, FormBuilder} fr
 // import { ErrorStateMatcher } from '@angular/material';
 // import { NgForm } from '@angular/forms';
 // import { ErrorStateMatcher } from '@angular/material/core';
-// import { Router } from '@angular/router';
+ import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userservice/user.service';
 
 
@@ -16,6 +16,7 @@ import { UserService } from 'src/app/services/userservice/user.service';
 export class LoginComponent implements OnInit {
   login!: FormGroup;
   submitted = false;
+  // router: any;
   
 
   constructor(private formBuilder: FormBuilder,private user:UserService) { }
@@ -46,6 +47,7 @@ export class LoginComponent implements OnInit {
        
        console.log("response",response.data);
        localStorage.setItem('token',response.data.token)
+      //  this.router.navigateByUrl('/dashboard');
       }
       )
     }else{

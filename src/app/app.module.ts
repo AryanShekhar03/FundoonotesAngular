@@ -32,6 +32,7 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
  import { MatDialogModule } from '@angular/material/dialog';
  import {MatExpansionModule} from '@angular/material/expansion';
  import { AuthgaurdService } from './services/Authgaurdservice/authgaurd.service';
+// import { MatCard } from '@angular/material/card';
  
 
 @NgModule({
@@ -49,6 +50,7 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
     DisplaynoteComponent,
     IconComponent,
     UpdateNotesComponent,
+    
     
   
   ],
@@ -72,7 +74,8 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
     HttpClientModule,
     MatCheckboxModule,
      MatDialogModule,
-     MatExpansionModule
+     MatExpansionModule,
+    //  MatCard
     
   ],
   providers: [AuthgaurdService],
