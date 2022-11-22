@@ -50,13 +50,14 @@ export class NotesService {
     return this.http.putservice('https://localhost:44328/api/Notes/Archieve?NotesId='+data,{},true,header);
    }
    TrashNotes(data:any){
+    console.log(data);
     let header={
       headers:new HttpHeaders({
         'Content-Type':'application/json',
         'Authorization':'Bearer '+this.token
       })
     }
-    return this.http.putservice('https://localhost:44328/api/Notes/TrashNotes?NotesID'+data,{},true,header);
+    return this.http.putservice('https://localhost:44328/api/Notes/TrashNotes?NotesID='+data,{},true,header);
    }
    NotesColor(data:any ){
     let header = {

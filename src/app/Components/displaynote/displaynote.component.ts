@@ -37,4 +37,5 @@ export class DisplaynoteComponent implements OnInit {
     console.log($event);
     this.changeNoteEvent.emit($event)
   }
+  
 }

@@ -97,6 +97,7 @@ export class IconComponent implements OnInit {
    UnArchieve() {
     this.note.ArchiveNotes(this.noteObject.notesId).subscribe((response: any) => {
       console.log("note unarchieve", response);
+      this.displayicons.emit(response);
     })
   }
  

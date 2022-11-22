@@ -22,7 +22,6 @@
     </div>
     <div role="button" class="add" *ngIf="!noteObject?.isArchieve && !noteObject?.isTrash">
         <img class="divImg" (click)=" onArchive()" src="assets/archive.png" alt="">
-        <!-- <img  *ngIf="!noteCard?.isArchieve && !noteCard?.trash" (click)="Archieve()" src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg"> -->
         <img  *ngIf ="noteObject?.isArchieve&& !noteObject?.isTrash"  src="assets/unarchive.png" alt=""
             (click)="UnArchieve()">
     </div>

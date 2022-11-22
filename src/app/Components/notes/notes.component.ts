@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NotesService } from 'src/app/services/noteservice/notes.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { NotesService } from 'src/app/services/noteservice/notes.service';
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent implements OnInit {
+  @Output() changeNoteEvent = new EventEmitter<string>();
+  @Output() displayicons = new EventEmitter<string>();
   noteArray:any;
   // noteId:any;
 
@@ -21,7 +23,7 @@ export class NotesComponent implements OnInit {
       this.noteArray=response;
       this.noteArray=this.noteArray.reverse()
       this.noteArray = this.noteArray.filter((object: any) => {
-            return object.archieve == false;
+            return object.archieve == false && object.delete == false;
         
             })
     
