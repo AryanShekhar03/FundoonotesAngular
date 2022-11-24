@@ -1,5 +1,5 @@
 <div class="boxsize">
-    <div *ngFor="let notes of childMessage" class="con">
+    <div *ngFor="let notes of childMessage | filter:filteredstring" class="con">
     <mat-card class="mat-box" [style.background]="notes.color">
         <div (click)="openDialog(notes)"> 
 
@@ -7,7 +7,7 @@
          <p (click)="openDialog(notes)">{{notes.body}}</p> 
          </div>
          <div class="icons">
-        <app-icon [noteObject]="notes "(displayicons)="recieveArchiveNote($event)"></app-icon>
+        <app-icon [noteObject]="notes "(displayicons)="recieveArchiveNote($event)"  (TrashNotes)="RestoreTrashNotes($event)" (displayicons)="Unarchievenote($event)"></app-icon>
         </div>
     </mat-card>
     </div>

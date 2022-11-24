@@ -8,9 +8,7 @@
         <div class="Searchbar"fxFlex="60%" fxHide.sm="true" fxHide.xs="true">
             <mat-form-field appearance="outline">
                 <mat-label class="search-area">Search</mat-label>
-                <input matInput type="search" 
-                    placeholder="Search" 
-                    >
+                <input matInput type="search" placeholder="Search"[(ngModel)]="filteredstring">      
                 <mat-icon matPrefix>search</mat-icon>
             </mat-form-field>
         </div>

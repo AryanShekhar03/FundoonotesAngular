@@ -8,10 +8,13 @@ import { UpdateNotesComponent } from '../update-notes/update-notes.component';
   styleUrls: ['./displaynote.component.scss']
 })
 export class DisplaynoteComponent implements OnInit {
+   filteredstring: string ='';
   @Input()childMessage:any;
   @Output() changeNoteEvent = new EventEmitter<string>();
   @Output() updatedisplay = new EventEmitter<string>();
   @Output() messageEvent = new EventEmitter<string>();
+  @Output()IsTrash=new EventEmitter<string>();
+  @Output()UnArchieve=new EventEmitter<string>();
   
 
   constructor(public dialog:MatDialog) { }
@@ -36,6 +39,12 @@ export class DisplaynoteComponent implements OnInit {
   iconRefresh($event: any) {
     console.log($event);
     this.changeNoteEvent.emit($event)
+  }
+  RestoreTrashNotes(event:any){
+    this.IsTrash.emit(event)
+  }
+  Unarchievenote(event:any){
+    this.UnArchieve.emit(event)
   }
   
 }

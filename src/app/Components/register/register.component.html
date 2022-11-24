@@ -1,6 +1,6 @@
 <mat-card class="mat-cards">
     <form [formGroup]="register" (ngSubmit)="onSubmit()">
-    <div>
+    <div ngClass.xs="mainDiv-xs" ngClass.sm="mainDiv-xs" ngClass.md="mainDiv-xs" ngClass.lg="mainDiv-xs" >
         
         <div fxLayoutAlign="start">
             <h1 class="head-style"><span class="Fundoo-f">F</span><span class="Fundoo-u">u</span><span
@@ -12,7 +12,7 @@
             <h3>Create Your Fundoonote Account</h3>
         </div>
         <div fxLayoutAlign="space-between start">
-            <div fxLayoutAlign="start">
+            <div fxLayoutAlign="start"ngClass.xs="input-xs" ngClass.sm="input-xs" ngClass.md="input-xs" ngClass.lg="input-xs">
                 <mat-form-field appearance="outline">
                     <mat-label>First name</mat-label>
                     <input matInput placeholder="Placeholder" formControlName="firstName">
@@ -25,8 +25,8 @@
                 </mat-form-field>
             </div>
             <div class="img-width">
-                <img src="assets/account.png" alt="" class="Register-img">
-                <figcaption class="img-content">One account. All of Fundoo<br> working for you.</figcaption>
+                <img src="assets/account.png" alt="" class="Register-img" ngClass.xs="note-xs" ngClass.sm="note-xs" ngClass.md="note-xs" ngClass.lg="note-xs">
+                <figcaption class="img-content" ngClass.xs="note-xs" >One account. All of Fundoo<br> working for you.</figcaption>
             </div>
         </div>
         <div class="username-margin" fxLayoutAlign="start">

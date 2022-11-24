@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NotesService } from 'src/app/services/noteservice/notes.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { NotesService } from 'src/app/services/noteservice/notes.service';
   styleUrls: ['./trash.component.scss']
 })
 export class TrashComponent implements OnInit {
+  // @Output()messageEvent = new EventEmitter<any>();
   trashList:any;
   // trash:boolean=false;
   constructor(private note:NotesService) { }
@@ -24,7 +25,12 @@ export class TrashComponent implements OnInit {
        return object.delete==true ;
       })
       console.log("trash notes ",this.trashList);
+      // this.messageEvent.emit(response)
      })
+    }
+    receiveMessage(event:any){
+      this.TrashList();
+    }
     //  this.note.getNotes().subscribe((response:any)=>{
     //   this.archiveList=response;
     //   // console.log(this.archiveList);
@@ -35,4 +41,4 @@ export class TrashComponent implements OnInit {
   }
 
 
-}
+

@@ -32,6 +32,7 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
  import { MatDialogModule } from '@angular/material/dialog';
  import {MatExpansionModule} from '@angular/material/expansion';
  import { AuthgaurdService } from './services/Authgaurdservice/authgaurd.service';
+import { FilterPipe } from './Pipes/filter.pipe';
 // import { MatCard } from '@angular/material/card';
  
 
@@ -50,6 +51,7 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
     DisplaynoteComponent,
     IconComponent,
     UpdateNotesComponent,
+    FilterPipe,
     
     
   

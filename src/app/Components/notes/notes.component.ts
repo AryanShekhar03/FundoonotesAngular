@@ -9,6 +9,7 @@ import { NotesService } from 'src/app/services/noteservice/notes.service';
 export class NotesComponent implements OnInit {
   @Output() changeNoteEvent = new EventEmitter<string>();
   @Output() displayicons = new EventEmitter<string>();
+  @Output()IsTrash=new EventEmitter<string>();
   noteArray:any;
   // noteId:any;
 
@@ -49,6 +50,13 @@ export class NotesComponent implements OnInit {
     autocreatenote($event:any){
      console.log($event)
      this.getAllNotes();
+    }
+    trashmessage(event:any){
+      console.log(event)
+      this.getAllNotes();
+    }
+    CreateUnarchieve(event:any){
+      this.getAllNotes();
     }
   // getAllNotes(){
   //   this.notes.getNotes().subscribe((response:any)=>{

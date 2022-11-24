@@ -14,6 +14,7 @@ export class IconComponent implements OnInit {
  @Input()noteObject:any
  @Output() changeNoteEvent = new EventEmitter<string>();
  @Output() displayicons = new EventEmitter<string>();
+ @Output() TrashNotes=new EventEmitter<string>();
  
 
  isArchieve: boolean = false;
@@ -65,7 +66,7 @@ export class IconComponent implements OnInit {
 
 
  
-  onDelete() {
+  onTrash() {
 
     // let reqData={
     //   NotesID:[this.noteObject.noteId],
@@ -73,6 +74,8 @@ export class IconComponent implements OnInit {
     // console.log(reqData)
     this.note.TrashNotes(this.noteObject.notesId).subscribe((response: any) => {
       console.log("Note trash Successfully",response);
+      this.TrashNotes.emit(response);
+        console.log(response)
       
     })
     // this.note.Trash(this.noteCard.notesId).subscribe((response: any) => {
@@ -99,6 +102,21 @@ export class IconComponent implements OnInit {
       console.log("note unarchieve", response);
       this.displayicons.emit(response);
     })
+  }
+  Restore() {
+  
+    this.note.TrashNotes(this.noteObject.notesId).subscribe((response: any) => {
+      console.log(response);
+    })
+  }
+  onDelete(){
+    this.note.DeleteNotes(this.noteObject.notesId).subscribe((response: any) => {
+      console.log("Note Deleted Successfully",response);
+        console.log(response)
+        this.TrashNotes.emit(response);
+      
+    })
+
   }
  
  

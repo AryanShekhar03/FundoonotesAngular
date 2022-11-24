@@ -8,9 +8,12 @@ import {MediaMatcher} from '@angular/cdk/layout';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  filteredstring: string ='';
   constructor() { }
 
   ngOnInit(): void {
+
+
   }
  }
  

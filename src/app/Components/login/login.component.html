@@ -1,42 +1,42 @@
 <form [formGroup]="login" (ngSubmit)="onSubmit()">
 
-<mat-card class="mat-cards">
+<mat-card class="mat-cards"ngClass.xs="maindiv-xs"ngClass.sm="mainDiv-xs" ngClass.md="mainDiv-xs" ngClass.lg="mainDiv-xs">
     <!-- <form [formGroup]="login" (ngSubmit)="onSubmit()"> -->
-    <div>
-<div class="" fxLayoutAlign="center start">
+    
+<div class="innerDiv" fxLayoutAlign="center start" ngClass.xs="innerDiv-xs" ngClass.sm="innerDiv-xs" ngClass.md="innerDiv-xs" ngClass.lg="innerDiv-xs" >
     <h1 class="head-style"><span class="Fundoo-f">F</span><span
         class="Fundoo-u">u</span><span class="Fundoo-n">n</span><span class="Fundoo-d">d</span><span
         class="Fundoo-o">o</span><span class="Fundoo-oo">o</span></h1>
         </div>
-        <div class="" fxLayoutAlign="center start"> <h2>Sign in</h2></div>
-            <div class="" fxLayoutAlign="center start"><h3>Use your Fundoo Account</h3>
+        <div class="" fxLayoutAlign="center start" fxLayoutAlign.xs="center start" ngClass.xs="input-xs" ngClass.sm="input-xs" ngClass.md="input-xs" ngClass.lg="input-xs"><h2>Sign in</h2></div>
+            <div class="" fxLayoutAlign="center start"fxLayoutAlign.xs="center start" ngClass.xs="input-xs" ngClass.sm="input-xs" ngClass.md="input-xs" ngCLass.lg="input-xs"><h3>Use your Fundoo Account</h3>
 </div>
 
-<div>
-<div fxLayoutAlign="center start">
+
+<div fxLayoutAlign="center start"fxLayoutAlign.xs="center start" class="xyz" ngClass.xs="input-xs" ngClass.sm="input-xs" ngClass.md="input-xs" ngClass.lg="input-xs">
     <mat-form-field appearance="outline" class="LabelWidth">
         <mat-label>Email</mat-label>
         <input matInput placeholder="Placeholder"  formControlName="email">
         <mat-error>Enter Email</mat-error>
     </mat-form-field>
 </div>
-<div fxLayoutAlign="center start">
+<div fxLayoutAlign="center start"fxLayoutAlign.xs="center start"ngClass.xs="input-xs" ngClass.sm="input-xs" ngClass.md="input-xs" ngClass.lg="input-xs">
     <mat-form-field appearance="outline" class="LabelWidth">
         <mat-label>Password</mat-label>
         <input matInput placeholder="Placeholder" type="password"  formControlName="password">
         <mat-error>Enter Password</mat-error>
     </mat-form-field>
 </div>
-<div class="ForgetPass">
-    <p routerLink="/forgetpassword" > Forget Password?</p>
+<div class="ForgetPass" ngClass.xs="for-xs">
+    <p routerLink="/forgetpassword"ngClass.xs="for-xs"> Forget Password?</p>
   
 </div>
 <div class="NotYourComputer"> <p>Not your computer? Use Guest mode to sign in privately.<br><span class="Learn">Learn more</span></p></div>
 <div class="CreateAccountLogin" style="display: flex;">
-<div class="CreateAccountbtn" routerLink="register"><a routerLink="/register">Create Account</a>
-</div><div class="LoginBtn"><button mat-raised-button class="LoginButton">Login</button></div>
-</div>
-</div>
+<div class="CreateAccountbtn" routerLink="register"><a routerLink="/register"ngClass.xs="for-xs">Create Account</a></div>
+<div class="LoginBtn"><button mat-raised-button class="LoginButton">Login</button></div>
+
+
 
 </div>
  </mat-card>

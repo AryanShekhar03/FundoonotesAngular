@@ -1,2 +1,2 @@
-<app-createnote (messageEvent)="autocreatenote($event)" ></app-createnote> 
-<app-displaynote  [childMessage]="noteArray"  (updatedisplay)="updatedicon($event)" (displayArchive)="receiveMessagearchive($event)" (changeNoteEvent)="iconRefresh($event)"> </app-displaynote>
+<app-createnote (messageEvent)="receiveMessage($event)" ></app-createnote> 
+<app-displaynote  [childMessage]="noteArray"  (updatedisplay)="updatedicon($event)" (displayArchive)="receiveMessagearchive($event)" (changeNoteEvent)="iconRefresh($event)" (isTrash)="trashmessage($event)" (UnArchieve)="CreateUnarchieve($event)"> </app-displaynote>

@@ -20,9 +20,9 @@
     <div role="button" class="add" *ngIf="!isTrash">
         <img class="divImg" src="assets/image.png" alt="">
     </div>
-    <div role="button" class="add" *ngIf="!noteObject?.isArchieve && !noteObject?.isTrash">
-        <img class="divImg" (click)=" onArchive()" src="assets/archive.png" alt="">
-        <img  *ngIf ="noteObject?.isArchieve&& !noteObject?.isTrash"  src="assets/unarchive.png" alt=""
+    <div role="button" class="add"> 
+        <img class="divImg" *ngIf="!isArchieve && !isTrash" (click)=" onArchive()" src="assets/archive.png" alt="">
+        <img class="divImg" *ngIf ="isArchieve && !isTrash"  src="assets/unarchive.png" alt=""
             (click)="UnArchieve()">
     </div>
 
@@ -33,7 +33,7 @@
     <div class="add" *ngIf="!isTrash" mat-icon-button matTooltip="More" [matMenuTriggerFor]="menu">
         <img class="divImg" src="assets/more.png" alt="">
         <mat-menu #menu="matMenu" yPosition="below">
-            <button mat-menu-item class="matmenuBtn" (click)="onDelete()">Delete note</button>
+            <button mat-menu-item class="matmenuBtn" (click)="onTrash()">Delete note</button>
             <button mat-menu-item class="matmenuBtn">Add Label</button>
             <button mat-menu-item class="matmenuBtn">Add drawing</button>
             <button mat-menu-item class="matmenuBtn">Make a copy</button>
@@ -41,8 +41,16 @@
             <button mat-menu-item class="matmenuBtn">Copy to google Docs</button>
         </mat-menu>
     </div>
-  
+    <div class="add" *ngIf="isTrash" fxLayout="row" fxLayourAlign="center">
+        <div matTooltip="Delete forever">
+            <img class="icons" (click)="onDelete()" src="assets/delete.png" alt="">
+        </div>
 
-        
+        <div class="buttons" matTooltip="Restore">
+            <img class="icons" src="assets/restore.png" alt=""(click)=" Restore()">
+        </div>
     </div>
+        
+</div>
+
 
