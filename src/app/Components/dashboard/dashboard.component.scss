@@ -154,11 +154,18 @@
     // height: -13px;
     align-items: center;
     margin-left: 180px;
-}
+    :hover{
+        background-color: #f1f3f4;
+        border-radius: 50%;
+    }}
 .iconsheader{
     display: flex;
     margin-left: 150px;
     align-items: center;
+    :hover{
+        background-color: #f1f3f4;
+        border-radius: 40%;
+      }
 }
 .circle{
     margin-left: 10px;
@@ -171,4 +178,8 @@
 }
 .mat-toolbar.mat-primary {
 border-bottom: 5.5px solid #b1b1b1;
+}
+.logoutbtn{
+    border: none;
+    background-color: #fff;
 }

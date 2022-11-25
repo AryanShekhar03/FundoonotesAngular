@@ -6,18 +6,19 @@ import { title } from 'process';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value:any,filterString :string) {
-    if(value.length ===0 || filterString ===''){
+transform(value: any, searchNote: any){
+  console.log(searchNote)
+  if ( searchNote ===''){
     return value;
   }
-
-  const notes =[];
-  for (const childMessage of value){
-    if (childMessage['title']=== filterString){
-      notes.push(childMessage);
+ 
+  const Message = [];
+  for(const notes of value){
+    if(notes.title.toLowerCase().includes(searchNote.toLowerCase()) || notes.body.toLowerCase().includes(searchNote.toLowerCase())){
+      Message.push(notes)
     }
   }
-  return notes;
+  return Message;
 }
 
 }

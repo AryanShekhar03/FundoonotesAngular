@@ -8,7 +8,7 @@
         <div class="Searchbar"fxFlex="60%" fxHide.sm="true" fxHide.xs="true">
             <mat-form-field appearance="outline">
                 <mat-label class="search-area">Search</mat-label>
-                <input matInput type="search" placeholder="Search"[(ngModel)]="filteredstring">      
+                <input matInput type="search" placeholder="Search"(keyup)="Search($event)" >      
                 <mat-icon matPrefix>search</mat-icon>
             </mat-form-field>
         </div>
@@ -20,8 +20,17 @@
         </div>
 
         <div class='iconsheader'>
+            
             <div class="apps"> <img src="assets/apps.png" alt="" width="29px" />  </div>
-            <div class="circle"> <img src="assets/account_circle.png" alt="" width="29px" />  </div>
+            <button mat-icon-button [matMenuTriggerFor]="logout" class="logoutbtn" >
+                <img class="circle" src="assets/account_circle.png" alt="" width="29px"/>
+              </button>
+                <mat-menu #logout="matMenu" >
+                 <img   src="assets/logout.png" alt="" (click)="Logout()" />
+                </mat-menu>
+
+
+            <!-- <div class="circle"> <img src="assets/account_circle.png" alt="" width="29px" />  </div> -->
 
         </div>
         

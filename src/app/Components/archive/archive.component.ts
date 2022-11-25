@@ -23,27 +23,14 @@ export class ArchiveComponent implements OnInit {
        return object.archieve==true;
       })
       console.log("Archive notes ",this.archiveList);
-      this.messageEvent.emit(response)
+      // this.messageEvent.emit(response)
      })
   } 
-  receiveMessage(event: any) {
+  
+  recivemsg(event:any){
+    console.log(event);
     this.getArchiveNotes();
-  }} 
-
-  // receiveMeassage(e:any){
-  //   console.log(e);
-  // this.getArchiveNotes();
-  // }
-  // getAllNotes(){
-  //   this.notes.getNotes().subscribe((response:any)=>{
-  //     this.noteArray=response;
-  //    console.log(this.noteArray)
-  //   })
-  //   }
-  //   receiveMeassage(e:any){
-  //     console.log(e);
-  //   this.getAllNotes();
-  //   }
+  }}
    
  
 

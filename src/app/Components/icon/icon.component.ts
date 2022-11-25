@@ -12,9 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 export class IconComponent implements OnInit {
   
  @Input()noteObject:any
- @Output() changeNoteEvent = new EventEmitter<string>();
- @Output() displayicons = new EventEmitter<string>();
- @Output() TrashNotes=new EventEmitter<string>();
+ @Output() refreshcolor=new EventEmitter<any>();
+  @Output() archiverefresh=new EventEmitter<any>();
+  @Output() trashrefresh=new EventEmitter<any>();
+ 
  
 
  isArchieve: boolean = false;
@@ -59,7 +60,8 @@ export class IconComponent implements OnInit {
     console.log(reqData);
     this.note.ArchiveNotes(this.noteObject.notesId).subscribe((response: any) => {
       console.log(response);
-      this.displayicons.emit(response);
+      // this.displayicons.emit(response);
+      this.archiverefresh.emit(response);
       
     })
   }
@@ -74,7 +76,8 @@ export class IconComponent implements OnInit {
     // console.log(reqData)
     this.note.TrashNotes(this.noteObject.notesId).subscribe((response: any) => {
       console.log("Note trash Successfully",response);
-      this.TrashNotes.emit(response);
+      // this.TrashNotes.emit(response);
+      this.trashrefresh.emit(response);
         console.log(response)
       
     })
@@ -91,7 +94,8 @@ export class IconComponent implements OnInit {
      };
      this.note.NotesColor(reqData).subscribe((response: any) => {
        console.log(response);
-       this.changeNoteEvent.emit(response);
+      //  this.changeNoteEvent.emit(response);
+      this.refreshcolor.emit(response)
       
        console.log("color", reqData)
        
@@ -100,7 +104,7 @@ export class IconComponent implements OnInit {
    UnArchieve() {
     this.note.ArchiveNotes(this.noteObject.notesId).subscribe((response: any) => {
       console.log("note unarchieve", response);
-      this.displayicons.emit(response);
+      // this.displayicons.emit(response);
     })
   }
   Restore() {
@@ -113,7 +117,7 @@ export class IconComponent implements OnInit {
     this.note.DeleteNotes(this.noteObject.notesId).subscribe((response: any) => {
       console.log("Note Deleted Successfully",response);
         console.log(response)
-        this.TrashNotes.emit(response);
+        // this.TrashNotes.emit(response);
       
     })
 

@@ -7,9 +7,7 @@ import { NotesService } from 'src/app/services/noteservice/notes.service';
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent implements OnInit {
-  @Output() changeNoteEvent = new EventEmitter<string>();
-  @Output() displayicons = new EventEmitter<string>();
-  @Output()IsTrash=new EventEmitter<string>();
+  
   noteArray:any;
   // noteId:any;
 
@@ -31,43 +29,23 @@ export class NotesComponent implements OnInit {
      console.log(this.noteArray)
     })
     }
-    receiveMessage($event: any) {
-      console.log($event);
+    autocreatenote(event:any){
+      console.log(event);
       this.getAllNotes();
     }
-    updatedicon($event:any) {
-      console.log($event);
+    autodispalay(event:any){
+      console.log(event);
+      
       this.getAllNotes();
     }
-    receiveMessagearchive($event:any){
-      console.log($event);
+    autoarchive(event:any){
+      console.log(event);
       this.getAllNotes();
     }
-    iconRefresh($event:any){
-      console.log($event)
+    iconrefresh(event:any){
+      console.log(event);
       this.getAllNotes();
     }
-    autocreatenote($event:any){
-     console.log($event)
-     this.getAllNotes();
-    }
-    trashmessage(event:any){
-      console.log(event)
-      this.getAllNotes();
-    }
-    CreateUnarchieve(event:any){
-      this.getAllNotes();
-    }
-  // getAllNotes(){
-  //   this.notes.getNotes().subscribe((response:any)=>{
-  //     this.noteArray=response;
-  //    console.log(this.noteArray)
-  //   })
-  //   }
-  //   receiveMeassage(e:any){
-  //     console.log(e);
-  //   this.getAllNotes();
-  //   }
 
     
 

@@ -28,16 +28,12 @@ export class TrashComponent implements OnInit {
       // this.messageEvent.emit(response)
      })
     }
-    receiveMessage(event:any){
+   
+    receivemessage($event:any){
+      console.log($event);
       this.TrashList();
-    }
-    //  this.note.getNotes().subscribe((response:any)=>{
-    //   this.archiveList=response;
-    //   // console.log(this.archiveList);
-    //   this.archiveList.reverse();
-    //   this.archiveList=this.archiveList.filter((object:any)=>{
-    //    return object.archieve==true;
-    //   })
+     }
+  
   }
 
 

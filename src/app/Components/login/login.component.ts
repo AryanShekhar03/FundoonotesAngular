@@ -16,6 +16,7 @@ import { UserService } from 'src/app/services/userservice/user.service';
 export class LoginComponent implements OnInit {
   login!: FormGroup;
   submitted = false;
+  router: any;
   // router: any;
   
 
@@ -47,7 +48,7 @@ export class LoginComponent implements OnInit {
        
        console.log("response",response.data);
        localStorage.setItem('token',response.data.token)
-      //  this.router.navigateByUrl('/dashboard');
+      this.router.navigateByUrl('/dashboard');
       }
       )
     }else{
