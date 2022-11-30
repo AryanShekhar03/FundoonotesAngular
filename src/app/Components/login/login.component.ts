@@ -16,11 +16,11 @@ import { UserService } from 'src/app/services/userservice/user.service';
 export class LoginComponent implements OnInit {
   login!: FormGroup;
   submitted = false;
-  router: any;
+  // router: any;
   // router: any;
   
 
-  constructor(private formBuilder: FormBuilder,private user:UserService) { }
+  constructor(private formBuilder: FormBuilder,private user:UserService,private router: Router) { }
 
   ngOnInit(): void {
     // localStorage.setItem('SeesionUser',this.login) 

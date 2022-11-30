@@ -13,6 +13,11 @@ export class DataService {
 
   outgoingData(message: any) {
     console.log(message)
-    this.messageSource.next(message)
-  }
+    this.messageSource.next(message)}
+    
+    // changeMessage(message: any) {
+    //   this.messageSource.next(message)
+    // }
+  
+  
 }

@@ -1,6 +1,8 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import { DataService } from 'src/app/services/dataservice/data.service';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -9,14 +11,24 @@ import { DataService } from 'src/app/services/dataservice/data.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  router: any;
+  // router: any;
   // filteredstring: string ='';
-  constructor(private dataservice : DataService) { }
+  // message:any;
+  // subscription: Subscription;
+  grid: boolean = true;
+
+
+  constructor(private dataservice : DataService , private router: Router) { }
 
   ngOnInit(): void {
+    // this.subscription = this.data.currentMessage.subscribe(message => this.message = message)
 
 
   }
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
+  // }
+
   Search(event:any){
     console.log(event.target.value)
     this.dataservice.outgoingData(event.target.value)
@@ -30,6 +42,10 @@ export class DashboardComponent implements OnInit {
   {
     localStorage.removeItem("token");
     this.router.navigateByUrl('/signin');
+  }
+
+  onClickView() {
+    return this.grid === true ? (this.grid = false) : (this.grid = true);
   }
  }
  

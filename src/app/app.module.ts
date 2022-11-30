@@ -34,6 +34,9 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes.com
  import { AuthgaurdService } from './services/Authgaurdservice/authgaurd.service';
 import { FilterPipe } from './Pipes/filter.pipe';
 // import { MatCard } from '@angular/material/card';
+// import { Router } from '@angular/router';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
  
 
 @NgModule({
@@ -52,6 +55,8 @@ import { FilterPipe } from './Pipes/filter.pipe';
     IconComponent,
     UpdateNotesComponent,
     FilterPipe,
+    // ListViewModule,
+    // ListViewAllModule,
     
     
   
@@ -77,7 +82,9 @@ import { FilterPipe } from './Pipes/filter.pipe';
     MatCheckboxModule,
      MatDialogModule,
      MatExpansionModule,
-    //  MatCard
+    //  
+    ListViewAllModule,
+    
     
   ],
   providers: [AuthgaurdService],

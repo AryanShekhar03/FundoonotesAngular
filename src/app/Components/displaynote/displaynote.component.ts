@@ -11,10 +11,14 @@ export class DisplaynoteComponent implements OnInit {
   //  filteredstring: string ='';
   message : any;
   searchNote : any;
+  // public display: number = 1;
+  
   @Input()childMessage:any;
   @Output() refreshDisplay=new EventEmitter<any>();
   @Output() messagevent=new EventEmitter<any>();
   @Output() colorchange=new EventEmitter<any>();
+
+  // public  listData: Object[] = this.childMessage;
  
   
   
@@ -53,6 +57,9 @@ export class DisplaynoteComponent implements OnInit {
   colorRefresh(event:any){
    this.colorchange.emit(event)
   }
+  // changeDisplay(mode: number): void {
+  //   this.display = mode;
+  // }
 
  
   

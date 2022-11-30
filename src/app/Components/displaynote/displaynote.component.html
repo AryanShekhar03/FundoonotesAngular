@@ -1,5 +1,14 @@
 <div class="boxsize">
-    <div *ngFor="let notes of childMessage |  filter: searchNote" class="con">
+
+    <!-- <div id="view" class="e-btn-group">
+        <input type="radio" id="left" name="align" value="1"/>
+        <label class="e-btn" for="left">Grid View</label>
+        <input type="radio" id="right" name="align" value="2" />
+        <label class="e-btn" for="right">List View</label>
+    </div> -->
+    
+<div *ngFor="let notes of childMessage |  filter: searchNote" class="con" >
+
     <mat-card class="mat-box" [style.background]="notes.color">
         <div (click)="openDialog(notes)"> 
 
@@ -10,5 +19,8 @@
         <app-icon [noteObject]="notes " (archiverefresh)="notearchive($event)" (trashrefresh)=" iconautorefresh($event)" (refreshcolor)=" colorRefresh($event)"></app-icon>
         </div>
     </mat-card>
+    <!-- <ng-template #list_content>
+        <ejs-listview id='sample-list-flat' [dataSource]='notes'></ejs-listview>
+        </ng-template> -->
     </div>
     </div> 

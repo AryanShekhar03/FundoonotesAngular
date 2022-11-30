@@ -70,10 +70,7 @@ export class IconComponent implements OnInit {
  
   onTrash() {
 
-    // let reqData={
-    //   NotesID:[this.noteObject.noteId],
-    // }
-    // console.log(reqData)
+
     this.note.TrashNotes(this.noteObject.notesId).subscribe((response: any) => {
       console.log("Note trash Successfully",response);
       // this.TrashNotes.emit(response);
@@ -81,8 +78,7 @@ export class IconComponent implements OnInit {
         console.log(response)
       
     })
-    // this.note.Trash(this.noteCard.notesId).subscribe((response: any) => {
-    //   console.log("Note trash Successfull", response);
+
     
    }
    selectColor(color:any)
