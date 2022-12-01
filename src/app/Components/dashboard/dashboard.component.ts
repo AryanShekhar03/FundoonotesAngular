@@ -45,7 +45,9 @@ export class DashboardComponent implements OnInit {
   }
 
   onClickView() {
-    return this.grid === true ? (this.grid = false) : (this.grid = true);
+    // return this.grid === true ? (this.grid = false) : (this.grid = true);
+    this.grid = !this.grid;
+    this.dataservice.isList.next(this.grid);
   }
  }
  

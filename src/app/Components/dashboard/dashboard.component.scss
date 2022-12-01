@@ -183,3 +183,40 @@ border-bottom: 5.5px solid #b1b1b1;
     border: none;
     background-color: #fff;
 }
+.maindiv-xs{
+        width: 100%;
+        height:70%;
+        background: red;
+        border: 0px solid rgb(220, 213, 213);
+        margin-top: 2.5%;
+        margin-left: -10%;
+        margin-right: 50%;
+        
+    
+    }
+    .innerDiv-xs{
+        width: 100%;
+        height:90%;
+        position:relative;
+        left: 50px;
+    }
+    .input-xs{
+        width:90%;
+        height:90px;
+        font-size: 11px;
+        // background-color: blue;
+    }
+    .for-xs{
+        // width: 90%;
+        height:100%;
+        // position:relative;
+        top: 15px;
+    }
+.mat-icon {
+        color: #64686eed;
+      }
+      button {
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+        }

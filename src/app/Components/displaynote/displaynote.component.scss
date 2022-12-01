@@ -5,10 +5,24 @@
     margin-top: 30px;
     
 }
-.boxsize
+.grid-getAllNotes
 {
-    display: flex; flex-flow: row wrap;padding-left: 54px;
+     display: flex; flex-flow: row wrap;padding-left: 54px;
+    // flex-direction: row;
+    // box-sizing: border-box;
+    // display: flex;
+    // margin-left: 15%;
+    // flex-wrap: wrap;
+    
 }
+.list-getAllNotes {
+    flex-direction: column;
+    // box-sizing: border-box;
+    display: flex;
+    margin-left: 30%;
+    width: 50px;
+    flex-wrap: wrap;
+  }
 .con{
     padding-left: 36px;
     display: flex;

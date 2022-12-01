@@ -77,32 +77,32 @@ a{
     text-decoration: none;
     color: var(--gm-colortextbutton-ink-color, #1a73e8);;
 }
-// .maindiv-xs{
-//     width: 100%;
-//     height:70%;
-//     background: red;
-//     border: 0px solid rgb(220, 213, 213);
-//     margin-top: 2.5%;
-//     margin-left: -10%;
-//     margin-right: 50%;
+.maindiv-xs{
+    width: 100%;
+    height:70%;
+    
+    border: 0px solid rgb(220, 213, 213);
+    margin-top: 2.5%;
+    margin-left: -10%;
+    margin-right: 50%;
     
 
-// }
-// .innerDiv-xs{
-//     width: 60%;
-//     height:90%;
-//     position:relative;
-//     left: 50px;
-// }
-// .input-xs{
-//     width:90%;
-//     height:90px;
-//     font-size: 11px;
-//     // background-color: blue;
-// }
+}
+.innerDiv-xs{
+    width: 60%;
+    height:90%;
+    position:relative;
+    left: 50px;
+}
+.input-xs{
+    width:90%;
+    height:90px;
+    font-size: 11px;
+    // background-color: blue;
+}
 .for-xs{
-    // width: 90%;
+     width: 90%;
     height:100%;
-    // position:relative;
+     position:relative;
     top: 15px;
 }

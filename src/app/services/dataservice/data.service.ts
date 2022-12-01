@@ -8,6 +8,8 @@ export class DataService {
 
   private messageSource = new BehaviorSubject([]);
   incomingData = this.messageSource.asObservable();
+  isList = new BehaviorSubject(false);
+  clicked = new BehaviorSubject(false);
 
   constructor() { }
 

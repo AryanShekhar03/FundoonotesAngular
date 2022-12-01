@@ -11,6 +11,7 @@ export class DisplaynoteComponent implements OnInit {
   //  filteredstring: string ='';
   message : any;
   searchNote : any;
+  isList: boolean = false;
   // public display: number = 1;
   
   @Input()childMessage:any;
@@ -26,8 +27,12 @@ export class DisplaynoteComponent implements OnInit {
   constructor(public dialog:MatDialog,private data : DataService) { }
 
   ngOnInit(): void {
+    this.data.isList.subscribe((data) => {
+      this.isList = data;
+      console.log('this is list', this.isList);
+    });
+
     console.log("Success",this.childMessage);
-    
     this.data.incomingData.subscribe((res) => {
       console.log("Searching Process",res)
       this.searchNote = res;
