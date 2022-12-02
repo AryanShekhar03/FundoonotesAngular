@@ -7,12 +7,12 @@
 }
 .grid-getAllNotes
 {
-     display: flex; flex-flow: row wrap;padding-left: 54px;
-    // flex-direction: row;
-    // box-sizing: border-box;
-    // display: flex;
-    // margin-left: 15%;
-    // flex-wrap: wrap;
+    //  display: flex; flex-flow: row wrap;padding-left: 54px;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    margin-left: 15%;
+    flex-wrap: wrap;
     
 }
 .list-getAllNotes {
@@ -20,16 +20,21 @@
     // box-sizing: border-box;
     display: flex;
     margin-left: 30%;
-    width: 50px;
+    // width: 50px;
     flex-wrap: wrap;
+    .con>mat-card{
+        // padding: 25px;
+        width: 400px;
+        }
   }
 .con{
     padding-left: 36px;
     display: flex;
 }
-.con>mat-card{
-padding: 25px;
-}
+// .con>mat-card{
+// padding: 25px;
+// width: 400px;
+// }
 .icons{
     margin-top: 42px;
 }

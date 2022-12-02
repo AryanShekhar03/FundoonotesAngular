@@ -212,11 +212,22 @@ border-bottom: 5.5px solid #b1b1b1;
         // position:relative;
         top: 15px;
     }
-.mat-icon {
-        color: #64686eed;
-      }
-      button {
+// .mat-icon {
+        
+//         background-color: transparent;
+//         border: none;
+//       }
+.button {
         background-color: Transparent;
         background-repeat:no-repeat;
         border: none;
-        }
+      }
+.btn{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    color: #64686eed;
+
+}
+
+     
