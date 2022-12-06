@@ -1,6 +1,6 @@
 <mat-card class="mat-cards">
     <form [formGroup]="register" (ngSubmit)="onSubmit()">
-    <div ngClass.xs="mainDiv-xs" ngClass.sm="mainDiv-xs" ngClass.md="mainDiv-xs" ngClass.lg="mainDiv-xs" >
+    <div Class="mainDiv-xs"  >
         
         <div fxLayoutAlign="start">
             <h1 class="head-style"><span class="Fundoo-f">F</span><span class="Fundoo-u">u</span><span
@@ -9,24 +9,24 @@
 
         </div>
         <div fxLayoutAlign="start">
-            <h3>Create Your Fundoonote Account</h3>
+            <h3 class="create">Create Your Fundoonote Account</h3>
         </div>
-        <div fxLayoutAlign="space-between start">
-            <div fxLayoutAlign="start"ngClass.xs="input-xs" ngClass.sm="input-xs" ngClass.md="input-xs" ngClass.lg="input-xs">
+        <div class="div"  fxLayoutAlign="space-between start">
+            <div class="box" fxLayoutAlign="start" >
                 <mat-form-field appearance="outline">
                     <mat-label>First name</mat-label>
                     <input matInput placeholder="Placeholder" formControlName="firstName">
                     <mat-error>Enter Firstname</mat-error>
                 </mat-form-field>
-                <mat-form-field appearance="outline" class="lastname-space">
+                <mat-form-field class="div" appearance="outline" class="lastname-space">
                     <mat-label>Last name</mat-label>
                     <input matInput placeholder="Placeholder" formControlName="lastName">
                     <mat-error>Enter Lastname</mat-error>
                 </mat-form-field>
             </div>
             <div class="img-width">
-                <img src="assets/account.png" alt="" class="Register-img" ngClass.xs="note-xs" ngClass.sm="note-xs" ngClass.md="note-xs" ngClass.lg="note-xs">
-                <figcaption class="img-content" ngClass.xs="note-xs" >One account. All of Fundoo<br> working for you.</figcaption>
+                <img src="assets/account.png" alt="" class="Register-img">
+                <figcaption class="img-content"  >One account. All of Fundoo<br> working for you.</figcaption>
             </div>
         </div>
         <div class="username-margin" fxLayoutAlign="start">
@@ -40,7 +40,7 @@
         </div>
         <div fxLayoutAlign="start" class="Suggestion">You Can Use Letter, Number & Periods</div>
         <div fxLayoutAlign="start" class="UseCurrentEmail">Use my current email address instead</div>
-        <div fxLayoutAlign="start">
+        <div class="password"fxLayoutAlign="start">
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
                 <input matInput placeholder="Placeholder" type="password" [type]="inputType" formControlName="password">
@@ -52,7 +52,7 @@
                 <mat-error>Enter confirm password</mat-error>
             </mat-form-field>
         </div>
-        <div fxLayoutAlign="start" class="Suggestion">Use 8 or more characters with a mix of letters, numbers & symbols
+        <div fxLayoutAlign="start" class="Suggestio">Use 8 or more characters with a mix of letters, numbers & symbols
         </div>
         <div fxLayoutAlign="start">
             <div class="Show-pass"><input

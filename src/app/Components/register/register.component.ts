@@ -9,6 +9,7 @@ import { UserService } from 'src/app/services/userservice/user.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  users: any = {};
   public inputType:string = 'password';
   public showPassword(event:any):void{
     event.target.checked ? this.inputType='text':this.inputType='password';
@@ -47,6 +48,10 @@ export class RegisterComponent implements OnInit {
        this.user.register(data).subscribe((response:any)=>{
         
         console.log(response);
+        // this.users =Object.assign(this.register.value.firstName,);
+        localStorage.setItem('Firstname' , JSON.stringify(this.register.value.firstName))
+        localStorage.setItem('lastName' , JSON.stringify(this.register.value.lastName))
+        localStorage.setItem('userName' , JSON.stringify(this.register.value.userName))
        }
        )
     }else{

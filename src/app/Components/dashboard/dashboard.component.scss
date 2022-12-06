@@ -229,5 +229,37 @@ border-bottom: 5.5px solid #b1b1b1;
     color: #64686eed;
 
 }
+@media only screen and (min-width:'320px') and (max-width:'480px'){
+    .menu{
+        // position: relative;
+        // height: 50vh;
+        width: 110vw;
+    }
+    .title-bar{
+        // position: relative;
+        // left: -10%;
+        // width: 2px;
+
+    }
+    .textKeep{
+        display: none;
+    }
+    .Searchbar{
+        width: 50px;
+    }
+    .search-area{
+        display: none;
+    }
+    .threeIcons{
+        position: relative;
+        left: -40%;
+    }
+    .iconsheader{
+        position: relative;
+        left: -76%;
+        // 
+    }
+  
+}
 
      

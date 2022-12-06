@@ -3,6 +3,8 @@ import { NotesService } from 'src/app/services/noteservice/notes.service';
 import { TrashComponent } from '../trash/trash.component';
 import { ArchiveComponent } from '../archive/archive.component';
 import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { CollaboratorComponent } from '../collaborator/collaborator.component';
 
 @Component({
   selector: 'app-icon',
@@ -40,7 +42,7 @@ export class IconComponent implements OnInit {
   // noteId=any;
   // archieve : boolean = false;
   // trash: boolean = false;
-  constructor(public note:NotesService ,private route:ActivatedRoute) { }
+  constructor(public note:NotesService ,private route:ActivatedRoute,private dialogRef : MatDialog) { }
 
   ngOnInit(): void {
     let component = this.route.snapshot.component;
@@ -50,7 +52,10 @@ export class IconComponent implements OnInit {
     if (component == ArchiveComponent) {
       this.isArchieve = true;
     }
-  }  
+  } 
+  openDialog(){
+    this.dialogRef.open(CollaboratorComponent);
+  } 
   
   onArchive() {
   

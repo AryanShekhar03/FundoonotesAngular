@@ -18,6 +18,7 @@ export class NotesComponent implements OnInit {
   }
   getAllNotes(){
     this.note.getNotes().subscribe((response:any)=>{
+      
       // console.log(response);
       this.noteArray=response;
       this.noteArray=this.noteArray.reverse()

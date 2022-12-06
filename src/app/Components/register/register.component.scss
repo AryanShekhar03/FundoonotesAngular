@@ -68,6 +68,11 @@
     margin-top: -3px;
     font-size: 13px;
 }
+.Suggestio{
+    margin-top: -3px;
+    font-size: 13px;
+
+}
 
 .username-margin {
     margin-top: -170px;
@@ -114,19 +119,71 @@ a{
     text-decoration: none;
     color: var(--gm-colortextbutton-ink-color, #1a73e8);;
 }
-.mainDiv-xs{
-    width: 100%;
-    height:120%;
-    //   background-color: red;
-    border: 0px solid rgb(220, 213, 213);
-    margin-top: 2.5%;
-    margin-left: 0%;
-}
-// .note-xs{
-//     display:none;
-// }
-.input-xs{
-    width:100%;
-    height:60px;
-    font-size: 11px;
+
+
+@media only screen and (min-width:'320px') and (max-width:'480px'){
+    .mat-cards{
+        //  width: 50px;
+
+        height: 100vh;
+        // background-color: red;
+        box-shadow: none;
+        left: -13%;
+    }
+    .img-width{
+        display: none;
+    }
+    .mainDiv-xs{
+        width: 35vw;
+        height: 100vh;
+    }
+    .head-style{
+        font-size: medium;
+    }
+    .create{
+        font-size: 10px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+  
+    .mat-form-field {
+        width: 120px;
+    }
+    .div{
+        display: flex;
+        flex-direction: column;
+        top: 10%;
+
+    }
+    .username-margin{
+        position: relative;
+        top: 20%;
+
+    }
+    .password{
+        position: relative;
+        top:10%;
+    }
+    .Suggestion{
+        font-size: 7px;
+        font-weight: 900;
+        top: 10%;
+    position: relative;
+    }
+    .UseCurrentEmail{
+    top: 10%;
+    left: 90%;
+    position: relative;
+    }
+    .Suggestio{
+        font-size: 10px;
+        font-weight: 900;
+        // top: 10%;
+    position: relative;
+    top: 20%;
+    // position: relative;
+
+    }
+    
 }

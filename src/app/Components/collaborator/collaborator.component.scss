@@ -1,0 +1,48 @@
+.matbox{
+    width: 550px;
+    height: 200px;
+
+}
+.coll{
+    border-bottom: outset;
+}
+.email{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+.divImg{
+    margin-left: 4px;
+    margin-top: 10px;
+
+}
+::ng-deep .mat-form-field-underline {
+    display: none;
+    // background-color: white;
+    background-color: rgba(0,0,0,0)
+}
+::ng-deep .mat-form-field-fill {
+    background-color: white;
+}
+.mat-form-field{
+ background-color: white;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: white;
+}
+.border{
+    display: flex;
+    justify-content: end;
+    border-top: outset;
+    padding-top: 9px;
+
+}
+.CancelButton{
+    margin-right: 30px;
+    border: none;
+    background-color: white
+}
+.SaveButton{
+    border: none;
+    background-color: white
+}

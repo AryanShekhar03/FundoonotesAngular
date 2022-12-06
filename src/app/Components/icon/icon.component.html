@@ -3,8 +3,8 @@
     <div role="button" class="add" *ngIf="!isTrash">
         <img class="divImg" src="assets/alert.png" alt="">
     </div>
-    <div role="button" class="add" *ngIf="!isTrash">
-        <img class="divImg" src="assets/personadd.png"alt="">
+    <div role="button" class="add" *ngIf="!isTrash"  >
+        <img class="divImg" src="assets/personadd.png"alt=""  (click)="openDialog()">
     </div>
 
     <div role="button" class="add" *ngIf="!isTrash" matTooltip="Background color" [matMenuTriggerFor]="color">

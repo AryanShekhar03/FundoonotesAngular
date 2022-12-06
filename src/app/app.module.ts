@@ -37,6 +37,7 @@ import { FilterPipe } from './Pipes/filter.pipe';
 // import { Router } from '@angular/router';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
+import { CollaboratorComponent } from './Components/collaborator/collaborator.component';
  
 
 @NgModule({
@@ -55,6 +56,7 @@ import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
     IconComponent,
     UpdateNotesComponent,
     FilterPipe,
+    CollaboratorComponent,
     // ListViewModule,
     // ListViewAllModule,
     

@@ -10,6 +10,7 @@ import { Console } from 'console';
 })
 export class UserService {
   token: any;
+  // user: any={}
 
   constructor(private http:HttpService) { }
   register(data:any){
