@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule ,FormsModule, } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +39,7 @@ import { FilterPipe } from './Pipes/filter.pipe';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
 import { CollaboratorComponent } from './Components/collaborator/collaborator.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
  
 
 @NgModule({
@@ -84,8 +86,9 @@ import { CollaboratorComponent } from './Components/collaborator/collaborator.co
     MatCheckboxModule,
      MatDialogModule,
      MatExpansionModule,
-    //  
     ListViewAllModule,
+    MatSnackBarModule,
+    MatAutocompleteModule,
     
     
   ],

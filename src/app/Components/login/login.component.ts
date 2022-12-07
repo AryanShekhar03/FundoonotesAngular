@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormGroupDirective, FormBuilder} from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 // import { ErrorStateMatcher } from '@angular/material';
 // import { NgForm } from '@angular/forms';
 // import { ErrorStateMatcher } from '@angular/material/core';
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   // router: any;
   
 
-  constructor(private formBuilder: FormBuilder,private user:UserService,private router: Router) { }
+  constructor(private formBuilder: FormBuilder,private user:UserService,private router: Router ,private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     // localStorage.setItem('SeesionUser',this.login) 
@@ -48,7 +49,12 @@ export class LoginComponent implements OnInit {
        
        console.log("response",response.data);
        localStorage.setItem('token',response.data.token)
-      this.router.navigateByUrl('/dashboard');
+      this.router.navigateByUrl('/dashboard').then(() => {
+        this.snackBar.open("User logged in", "OK", {
+          duration:4000,
+
+        });
+      });
       }
       )
     }else{

@@ -5,6 +5,7 @@ import { ArchiveComponent } from '../archive/archive.component';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-icon',
@@ -42,7 +43,7 @@ export class IconComponent implements OnInit {
   // noteId=any;
   // archieve : boolean = false;
   // trash: boolean = false;
-  constructor(public note:NotesService ,private route:ActivatedRoute,private dialogRef : MatDialog) { }
+  constructor(public note:NotesService ,private route:ActivatedRoute,private dialogRef : MatDialog,private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     let component = this.route.snapshot.component;
@@ -66,8 +67,12 @@ export class IconComponent implements OnInit {
     this.note.ArchiveNotes(this.noteObject.notesId).subscribe((response: any) => {
       console.log(response);
       // this.displayicons.emit(response);
-      this.archiverefresh.emit(response);
-      
+      this.archiverefresh.emit(response); {
+        this.snackBar.open("Note Archived", "OK", {
+          duration:4000,
+
+        });
+      }
     })
   }
 

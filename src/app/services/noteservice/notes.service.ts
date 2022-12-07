@@ -78,6 +78,16 @@ export class NotesService {
     }
     return this.http.Deleteservice('https://localhost:44328/api/Notes/DeleteNotes?NotesID='+data,{},true,header);
    }
+   addCollab(data:any){
+    console.log(data);
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'Authorization':'Bearer '+this.token
+      })
+    }
+    return this.http.postservice('https://localhost:44328/api/Collab/AddCollab'+data,{},true,header);
+   }
 
    
 }

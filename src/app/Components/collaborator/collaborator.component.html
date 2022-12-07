@@ -4,14 +4,24 @@
     </div>
     <div class="email">
         <img class="circle" src="assets/account_circle.png" alt="" width="29px"/>
+        <form class="example-form">
          <div><img class="divImg" src="assets/personadd.png"alt="" width="29px"><mat-form-field appearance="fill" class="LabelWidth" >
             <mat-label>Person or email to share with</mat-label>
-            <input matInput placeholder="" >
+            <input type="text" placeholder="" matInput 
+            [formControl]="myControl"
+            [matAutocomplete]="auto">
+            
+            <mat-autocomplete #auto="matAutocomplete" (optionselected)="Selectemail($event)">
+            <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+            </mat-option>
+            </mat-autocomplete>
         </mat-form-field></div>
+        </form>
     </div>  
     <div class="border">
-        <button mat-icon-button class="CancelButton">Cancel</button>
-        <button mat-icon-button  (click)="closeDialog()" class="SaveButton">Save</button>
+        <button mat-icon-button class="CancelButton" (click)="closeDialog()">Cancel</button>
+        <button mat-icon-button (click)="addCollab()"  class="SaveButton">Save</button>
 
     </div>        
 

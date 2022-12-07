@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, FormGroup, FormBuilder, FormsModule, NgForm} from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/userservice/user.service';
 // import { MustMatch } from './_helpers/must-match.validator';
 
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
     event.target.checked ? this.inputType='text':this.inputType='password';
   }
 
-  constructor(private formBuilder: FormBuilder, private user:UserService) { }
+  constructor(private formBuilder: FormBuilder, private user:UserService,private snackBar: MatSnackBar) { }
   register!: FormGroup;
   submitted = false;
   hide = true;
@@ -47,7 +48,12 @@ export class RegisterComponent implements OnInit {
        }
        this.user.register(data).subscribe((response:any)=>{
         
-        console.log(response);
+        console.log(response);  {
+          this.snackBar.open("User Registered", "OK", {
+            duration:4000,
+  
+          });
+        }
         // this.users =Object.assign(this.register.value.firstName,);
         localStorage.setItem('Firstname' , JSON.stringify(this.register.value.firstName))
         localStorage.setItem('lastName' , JSON.stringify(this.register.value.lastName))
