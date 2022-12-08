@@ -85,7 +85,11 @@ export class IconComponent implements OnInit {
       console.log("Note trash Successfully",response);
       // this.TrashNotes.emit(response);
       this.trashrefresh.emit(response);
-        console.log(response)
+        console.log(response);
+          this.snackBar.open("Note Trashed", "OK", {
+            duration:4000,
+  
+          });
       
     })
 
@@ -103,13 +107,21 @@ export class IconComponent implements OnInit {
       //  this.changeNoteEvent.emit(response);
       this.refreshcolor.emit(response)
       
-       console.log("color", reqData)
+       console.log("color", reqData);
+       this.snackBar.open("Color changed", "OK", {
+        duration:4000,
+
+      });
        
      })
    }  
    UnArchieve() {
     this.note.ArchiveNotes(this.noteObject.notesId).subscribe((response: any) => {
       console.log("note unarchieve", response);
+      this.snackBar.open("Note UnArchived", "OK", {
+        duration:4000,
+
+      });
       // this.displayicons.emit(response);
     })
   }
@@ -117,12 +129,20 @@ export class IconComponent implements OnInit {
   
     this.note.TrashNotes(this.noteObject.notesId).subscribe((response: any) => {
       console.log(response);
+      this.snackBar.open("Note Restored", "OK", {
+        duration:4000,
+
+      });
     })
   }
   onDelete(){
     this.note.DeleteNotes(this.noteObject.notesId).subscribe((response: any) => {
       console.log("Note Deleted Successfully",response);
         console.log(response)
+        this.snackBar.open("Note Deleted", "OK", {
+          duration:4000,
+
+        });
         // this.TrashNotes.emit(response);
       
     })

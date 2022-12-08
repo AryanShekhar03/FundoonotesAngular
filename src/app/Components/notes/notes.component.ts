@@ -47,6 +47,10 @@ export class NotesComponent implements OnInit {
       console.log(event);
       this.getAllNotes();
     }
+    updatedicon($event:any) {
+      console.log($event);
+      this.getAllNotes();
+    }
 
     
 

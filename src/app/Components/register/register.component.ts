@@ -55,9 +55,9 @@ export class RegisterComponent implements OnInit {
           });
         }
         // this.users =Object.assign(this.register.value.firstName,);
-        localStorage.setItem('Firstname' , JSON.stringify(this.register.value.firstName))
-        localStorage.setItem('lastName' , JSON.stringify(this.register.value.lastName))
-        localStorage.setItem('userName' , JSON.stringify(this.register.value.userName))
+        localStorage.setItem('Firstname' , (this.register.value.firstName))
+        localStorage.setItem('lastName' , (this.register.value.lastName))
+        localStorage.setItem('userName' , (this.register.value.userName))
        }
        )
     }else{

@@ -84,9 +84,10 @@ export class NotesService {
       headers:new HttpHeaders({
         'Content-Type':'application/json',
         'Authorization':'Bearer '+this.token
+        
       })
     }
-    return this.http.postservice('https://localhost:44328/api/Collab/AddCollab'+data,{},true,header);
+    return this.http.postservice('https://localhost:44328/api/Collab/AddCollab',data,true,header);
    }
 
    

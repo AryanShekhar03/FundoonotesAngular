@@ -10,6 +10,7 @@ import { NotesService } from 'src/app/services/noteservice/notes.service';
   styleUrls: ['./collaborator.component.scss']
 })
 export class CollaboratorComponent implements OnInit {
+  // First :string;
   myControl = new FormControl('');
   options : string[] = ['Aaryashekhar12@gmail.com',
     'ShubhamKumar@gmail.com',
@@ -27,30 +28,37 @@ export class CollaboratorComponent implements OnInit {
   
   @Input()noteObject:any
 
-  Selectemail(value:any){
-    console.log(value);
-  }
+  // Selectemail(value:any){
+  //   console.log(value);
+  // }
 
+ 
+  
   constructor( public dialogRef: MatDialogRef<CollaboratorComponent>,  @Inject(MAT_DIALOG_DATA) public data: any,public note:NotesService) { }
   
-
+  First =(localStorage.getItem("Firstname"));
+  last = (localStorage.getItem("lastName"));
+  user =(localStorage.getItem("userName"));
+              
   ngOnInit(): void {
     
-    // console.log('Firstname:' +localStorage.getItem('Firstname'));
-    // localStorage.setItem('Firstname' , JSON.stringify(this.register.value.firstName))
-    //     localStorage.setItem('lastName' , JSON.stringify(this.register.value.lastName))
-    //     localStorage.setItem('userName' , JSON.stringify(this.register.value.userName))
+     
   }
 
   closeDialog(){
     this.dialogRef.close(CollaboratorComponent)
   }
-  // localStorage.getItem('users' , JSON.stringify(this.users))
+  
   
   addCollab(){
-    this.note.addCollab(this.noteObject.notesId).subscribe((response: any) => {
+    let reqData={
+      NotesId:[this.noteObject.notesID],
+      collabEmail:[this.noteObject.options]
+    }
+    this.note.addCollab(reqData).subscribe((response: any) => {
       console.log("collab Successfully",response);
         console.log(response)
+        console.log(this.noteObject.notesId);
         // this.TrashNotes.emit(response);
     })
 

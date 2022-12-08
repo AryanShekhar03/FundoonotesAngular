@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotesService } from 'src/app/services/noteservice/notes.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class CreatenoteComponent implements OnInit {
   createNoteForm!:FormGroup;
   submitted=false;
 
-  constructor(private formbuilder:FormBuilder, private note:NotesService) { }
+  constructor(private formbuilder:FormBuilder, private note:NotesService ,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.createNoteForm=this.formbuilder.group({
@@ -38,8 +39,11 @@ export class CreatenoteComponent implements OnInit {
     this.note.addNotes(resdata).subscribe((result:any)=>{
       console.log(result);
       this.messageEvent.emit(result)
+      this.snackBar.open("Note Created", "OK", {
+        duration:4000,
       
     })
+  })
   }
 }
 onSubmit(){
